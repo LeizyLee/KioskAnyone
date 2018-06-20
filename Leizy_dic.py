@@ -93,24 +93,60 @@ class LeDict:
         self.PointList = list(self.menu_list.keys())
         tmp = ''
 
-        while tmp == 'R':
+        while not tmp == 'E':
             print("시작을 원하시면 R을 눌러주세요!")
             tmp = input()
 
-        tmp = input("카테고리를 선택해주세요. 첫 항목은 %s입니다. \n그리고 선택을 희망하시면 E를 입력해주세요."%self.PointList[tnum])
-        while tmp == 'E':
-            if tmp == 'a':
-                if tnum == 0:
-                    tnum = len(self.PointList) - 1
-                    tmp = input("현재 항목은 %s입니다."%self.PointList[tnum])
-            elif tmp == 'd':
-                if tnum == len(self.PointList) - 1:
-                    tnum = 0
-                    tmp = input("현재 항목은 %s입니다."%self.PointList[tnum])
-            else:
-                tmp = input("잘못된 입력입니다. 다시 입력해주세요 -> ")
-        tlist = self.menu_list.values(self.PointList[tnum])
-        print("카테고리 선택이 완료되었습니다. 이제 아이템을 선택해주세요. 첫 항목은 %s입니다. 선택은 전과 동입니다.\n"%tlist)
+            tmp = input("카테고리를 선택해주세요. 첫 항목은 %s입니다. \n그리고 선택을 희망하시면 E를 입력해주세요.\n->"%self.PointList[tnum])
+            while not tmp == 'E':
+                if tmp == 'a':
+                    if tnum == 0:
+                        tnum = len(self.PointList) - 1
+                        tmp = input("현재 항목은 %s입니다.\n->"%self.PointList[tnum])
+                    else:
+                        tnum = tnum - 1
+                        tmp = input("현재 항목은 %s입니다.\n->" % self.PointList[tnum])
+
+                elif tmp == 'd':
+                    if tnum == len(self.PointList) - 1:
+                        tnum = 0
+                        tmp = input("현재 항목은 %s입니다.\n->"%self.PointList[tnum])
+                    else:
+                        tnum = tnum + 1
+                        tmp = input("현재 항목은 %s입니다.\n->" % self.PointList[tnum])
+
+                else:
+                    tmp = input("잘못된 입력입니다. 다시 입력해주세요 -> ")
+
+                tlist = self.menu_list.get(self.PointList[tnum])
+                tnum = 0
+
+                tmp = input("카테고리 선택이 완료되었습니다. 이제 아이템을 선택해주세요. 첫 항목은 %s입니다. 선택은 전과 동입니다.\n->"%tlist)
+                while not tmp == 'E':
+                    if tmp == 'a':
+                        if tnum == 0:
+                            tnum = len(tlist) - 1
+                            tmp = input("현재 항목은 %s입니다.\n->"%tlist[tnum])
+                        else:
+                            tnum = tnum - 1
+                            tmp = input("현재 항목은 %s입니다.\n->" % tlist[tnum])
+
+                    elif tmp == 'd':
+                        if tnum == len(tlist) - 1:
+                            tnum = 0
+                            tmp = input("현재 항목은 %s입니다.\n->"%tlist[tnum])
+                        else:
+                            tnum = tnum + 1
+                            tmp = input("현재 항목은 %s입니다.\n->" % tlist[tnum])
+                    else:
+                        tmp = input("잘못된 입력입니다. 다시 입력해주세요 -> ")
+        print("선택하신 항목은 %s입니다."%tlist[tnum])
 
     def __del__(self):
+        print("리스트를 삭제하고 프로그램을 종료합니다.\n")
         del(self.menu_list)
+
+Leizy = LeDict()
+Leizy.set_Dic()
+Leizy.show_Dic()
+Leizy.Do_Run()

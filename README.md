@@ -3,7 +3,7 @@
 
 외부 환경에서 파이썬2, 3버전이 *동시에 존재할때* 3 pip 쓰는 방법
 
-<pre> python3 -m pip install --upgrade pip  <code>
+''' python3 -m pip install --upgrade pip  '''
 
 * 사용한 모듈
   * tkinter

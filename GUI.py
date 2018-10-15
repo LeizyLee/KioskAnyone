@@ -2,175 +2,172 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import font
 from tkinter import *
-import UnmanedRack
+from tkinter import scrolledtext
+import DB
+
+#==============================================================================
+# 메뉴 데이터 불러오기
+#==============================================================================
+db_tmp = DB.DBlist(_host="202.31.147.29",_db="kioskmenu", _user="guest", _password='0000')
+flag = 0
+i, j, k = 0, 0, 0
+catlist = db_tmp.get_cat()
+result = []
 
 #==============================================================================
 # Create GUI instance
 #==============================================================================
 win = tk.Tk()
-
-
-#==============================================================================
-#메뉴 데이터 불러오기
-#==============================================================================
-menu = UnmanedRack.unManBeta()
-menu.set_Dic()
-
+mighty = ttk.Frame(win)
+mighty.pack(fill=NONE, expand=TRUE)
 
 #==============================================================================
-#데이터 처리를 위한 변수들 및 초기화
+# 프레임 형성하기
 #==============================================================================
-tmp_l = 0
-tmp_m = 1
-tmp_r = 2
-tmp_list = list(menu.get_key())
+UpFrame = ttk.Frame(mighty)
+UpFrame.grid(column=0, row=0)
 
-window_state = 1
+up1 = ttk.LabelFrame(UpFrame)
+up1.grid(column=0, row=0, padx=15, pady='5m')
+up2 = ttk.LabelFrame(UpFrame)
+up2.grid(column=1, row=0, padx=15, pady='5m')
+up3 = ttk.LabelFrame(UpFrame)
+up3.grid(column=2, row=0, padx=15, pady='5m')
 
-
-#==============================================================================
-# Add a title
-#==============================================================================
-win.title("Python GUI")
-
-
-#==============================================================================
-# 관리의 편의성을 위해 Mighty 추가
-#==============================================================================
-mighty = ttk.LabelFrame(win, text='Mighty Python')
-mighty.grid(column=0, row=0)
-mighty.pack(fill=NONE, anchor=CENTER, expand=TRUE)
-
-
+MidFrame = ttk.Frame(mighty)
+MidFrame.grid(column=0, row=1)
 
 #==============================================================================
-# 메뉴를 순차적으로 보여줄 라벨 프레임 추가
+# 메뉴를 보여줄 라벨 형성
 #==============================================================================
-UpFrame = ttk.LabelFrame(mighty, text='Show Menu List')
-UpFrame.grid(column=0, row=0, ipadx='4m', ipady='1m', padx='2m', pady='1m')
+sideFont = font.Font(size=20)
+middleFont = font.Font(size=24)
 
-MIddlesubFrame = ttk.LabelFrame(mighty)
-MIddlesubFrame.grid(column=0, row=1)
-
-
-#==============================================================================
-#이벤트를 처리할 버튼 프레임을 추가
-#==============================================================================
-DButtonFrame = ttk.LabelFrame(mighty, text='Button Action')
-DButtonFrame.grid(column=0, row=2)
+left_label = ttk.Label(up1, text="첫번째 항목", anchor="center", font=sideFont, width=15,  justify=LEFT)
+left_label.grid(column=0, row=0, pady = '5m')
+middle_label = ttk.Label(up2, text="두번째 항목", anchor="center", font=middleFont, width=20, justify=CENTER)
+middle_label.grid(column=1, row=0,pady = '5m')
+right_label = ttk.Label(up3, text="세번째 항목", anchor="center", font=sideFont, width=15, justify=RIGHT)
+right_label.grid(column=2, row=0,pady = '5m')
 
 #==============================================================================
-# Add a Label
+# 버튼 이벤트
 #==============================================================================
-Afont=font.Font(size=15)
-Bfont=font.Font(size=18)
+def CenterClick():
+    global db_tmp, catlist, flag, i, j, k
+    if flag == 0:
+        scr.insert(tk.INSERT, "안녕하세요!\n")
+        scr.insert(tk.INSERT, "===============\n카테고리 항목 출력\n")
+        for i in catlist:
+            scr.insert(tk.INSERT, str(i) + "\n")
+        scr.insert(tk.INSERT,"===============\n")
+        left_label.config(text=str(catlist[-1]))
+        middle_label.config(text=str(catlist[0]))
+        right_label.config(text=str(catlist[1]))
+        flag = 1
+    elif flag == 1:
+        result.append(catlist[i])
+        scr.insert(tk.INSERT, str(catlist[j])+" 선택 완료!\n해당 메뉴 목록을 불러옵니다.")
+        scr.insert(tk.INSERT, "===============\n아이템 항목 출력\n")
+        itemlist = db_tmp.get_item(catlist[j])
+        for i in itemlist:
+            scr.insert(tk.INSERT, str(i) + "\n")
+        catlist = itemlist
+        left_label.config(text=str(catlist[-1][0]))
+        middle_label.config(text=str(catlist[0][0]))
+        right_label.config(text=str(catlist[1][0]))
+        flag = 2
 
-a_label = ttk.Label(UpFrame, text="-1", anchor="center", font=Afont, width=8, justify=LEFT)
-a_label.grid(column=0, row=0, sticky='w')
-b_label = ttk.Label(UpFrame, text="", anchor="center", font=Bfont, width=8, justify=CENTER)
-b_label.grid(column=1, row=0,sticky='w')
-c_label = ttk.Label(UpFrame, text="1", anchor="center", font=Afont, width=8, justify=RIGHT)
-c_label.grid(column=2, row=0,sticky='w')
+    elif flag == 2:
+        scr.insert(tk.INSERT, "===================================================\n해당 메뉴가 선택 되었씁니다! 더 고르실려면 왼쪽 그렇지 않다면 오른쪽을 눌러주세요!\n")
+        left_label.config(text="추가!")
+        right_label.config(text="종료! 및 계산!")
+        middle_label.config(text="--------")
+        flag = 3
+    i = -1
+    j = 0
+    k = 1
 
-sub_label = ttk.Label(MIddlesubFrame, text="sub list")
-sub_label.grid(column=1, row=2,sticky='w')
-
-
-#==============================================================================
-# Button Click Event Function
-#==============================================================================
-def click_me():
-    global window_state, tmp_l, tmp_m, tmp_r
-    global tmp_list, menu
-    if window_state == 1:
-        sub_label.configure(text='데이터를 불러오고 프로그램을 시작합니다.')
-        a_label.config(text=str(tmp_list[tmp_l]))
-        b_label.config(text=str(tmp_list[tmp_m]))
-        c_label.config(text=str(tmp_list[tmp_r]))
-        action.config(text="선택")
-        window_state = 0
-    elif window_state == 0:
-        window_state = 2
-        tmp_list = menu.get_item(tmp_list[tmp_m])
-        tmp_l = 0
-        tmp_m = 1
-        tmp_r = 2
-        a_label.config(text=str(tmp_list[tmp_l]))
-        b_label.config(text=str(tmp_list[tmp_m]))
-        c_label.config(text=str(tmp_list[tmp_r]))
-    elif window_state == 2:
-        MIddlesubFrame.grid_forget()
-        action.config(text="최종")
-        LeBtn.config(text="포장")
-        RgBtn.config(text="매장")
+def rightClick():
+    global db_tmp, catlist, flag, i, j, k
+    if flag == 1 or flag == 2:
+        i = i + 1
+        j = j + 1
+        k = k + 1
+        if i == len(catlist):
+            i = 0
+        elif j == len(catlist):
+            j = 0
+        elif k == len(catlist):
+            k = 0
+        if flag == 1:
+            left_label.config(text=str(catlist[i]))
+            middle_label.config(text=str(catlist[j]))
+            right_label.config(text=str(catlist[k]))
+        else:
+            left_label.config(text=str(catlist[i][0]))
+            middle_label.config(text=str(catlist[j][0]))
+            right_label.config(text=str(catlist[k][0]))
+    elif flag == 3:
+            scr.insert(tk.INSERT, "\n\n\n\n")
+            num = 0
+            for i in result:
+                scr.insert(tk.INSERT, str(i) + "\n")
+                num = num + i[1]
+            scr.insert(tk.INSERT, "등의 항목이 선택 되었습니다!\n 총 금액은 "+str(num)+"\\ 입니다.\n감사합니다.")
     else:
         pass
 
-def click_Up():
-    sub_label.config(text="going up")
-
-def click_Down():
-    sub_label.config(text="going down")
-
-def click_left():
-    global tmp_l, tmp_m, tmp_r, window_state, menu
-    if window_state == 0 or window_state == 2:
-        tmp_l = tmp_l - 1
-        tmp_m = tmp_m - 1
-        tmp_r = tmp_r - 1
-        if tmp_l < 0:
-            tmp_l = len(tmp_list) - 1
-        elif tmp_m < 0:
-            tmp_m = len(tmp_list) - 1
-        elif tmp_r < 0:
-            tmp_r = len(tmp_list) - 1
-        a_label.config(text=str(tmp_list[tmp_l]))
-        b_label.config(text=str(tmp_list[tmp_m]))
-        c_label.config(text=str(tmp_list[tmp_r]))
-        sub_label.config(text=menu.get_item(tmp_list[tmp_m]))
+def leftClick():
+    global db_tmp, catlist, flag, i, j, k
+    if flag == 1 or flag == 2:
+        if i < 0:
+            i = len(catlist) - 1
+        elif j < 0:
+            j = len(catlist) - 1
+        elif k < 0:
+            k = len(catlist) - 1
+        i = i - 1
+        j = j - 1
+        k = k - 1
+        if flag == 1:
+            left_label.config(text=str(catlist[i]))
+            middle_label.config(text=str(catlist[j]))
+            right_label.config(text=str(catlist[k]))
+        else:
+            left_label.config(text=str(catlist[i][0]))
+            middle_label.config(text=str(catlist[j][0]))
+            right_label.config(text=str(catlist[k][0]))
+    elif flag == 3:
+        scr.insert()
     else:
         pass
 
-def click_right():
-    global tmp_l, tmp_m, tmp_r, window_state, menu
-    if not window_state == 1:
-        tmp_l = tmp_l + 1
-        tmp_m = tmp_m + 1
-        tmp_r = tmp_r + 1
-        if tmp_l == len(tmp_list):
-            tmp_l = 0
-        elif tmp_m == len(tmp_list):
-            tmp_m = 0
-        elif tmp_r == len(tmp_list):
-            tmp_r = 0
-        a_label.config(text=str(tmp_list[tmp_l]))
-        b_label.config(text=str(tmp_list[tmp_m]))
-        c_label.config(text=str(tmp_list[tmp_r]))
-        sub_label.config(text=menu.get_item(tmp_list[tmp_m]))
-    else:
-        pass
-
+#==============================================================================
+# 버튼 생성
+#==============================================================================
+left_button = ttk.Button(MidFrame, text="Left", command=leftClick)
+left_button.grid(column=0, row=0, ipady='3m')
+left_button.grid_configure(padx=8, pady=4)
+mid_button = ttk.Button(MidFrame, text="Center", command=CenterClick)
+mid_button.grid(column=1, row=0, ipady='3m')
+mid_button.grid_configure(padx=8, pady=4)
+right_button = ttk.Button(MidFrame, text="Right", command=rightClick)
+right_button.grid(column=2, row=0, ipady='3m')
+right_button.grid_configure(padx=8, pady=4)
 
 #==============================================================================
-# Adding a Button
+# 스크롤 텍스트 생성
 #==============================================================================
-action = ttk.Button(DButtonFrame, text="Click Me!", command=click_me)
-action.grid(column=1,row=1)
-upBtn = ttk.Button(DButtonFrame, text="Up!", command=click_Up)
-upBtn.grid(column=1,row=0)
-DownBtn = ttk.Button(DButtonFrame, text="Down!", command=click_Down)
-DownBtn.grid(column=1, row=2)
-LeBtn = ttk.Button(DButtonFrame, text="Left!", command=click_left)
-LeBtn.grid(column=0, row=1)
-RgBtn = ttk.Button(DButtonFrame, text="Right!", command=click_right)
-RgBtn.grid(column=2,row=1)
-
+scr_w = 80
+scr_h = 10
+scr = scrolledtext.ScrolledText(mighty, width=scr_w, height=scr_h, wrap=tk.WORD)
+scr.grid(column=0, row=2, sticky="S")
 
 #==============================================================================
 #GUI 창 크기 조절 메소드
 #==============================================================================
 win.resizable(False,False)
-
 
 #==============================================================================
 # Start GUI

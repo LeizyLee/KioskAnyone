@@ -4,6 +4,7 @@ from tkinter import font
 from tkinter import *
 from tkinter import scrolledtext
 import DB
+#이것은 테스트다
 
 #==============================================================================
 # 메뉴 데이터 불러오기

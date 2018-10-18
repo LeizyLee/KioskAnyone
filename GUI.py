@@ -140,7 +140,10 @@ def leftClick():
             middle_label.config(text=str(catlist[j][0]))
             right_label.config(text=str(catlist[k][0]))
     elif flag == 3:
-        scr.insert()
+        scr.insert("기존의 카테고리에서 선택하시기를 원하시면 왼쪽\n새로운 카테고리를 원하시면 오른쪽을 눌러주세요.\n")
+        left_label.config(text="현 카테고리")
+        right_label.config(text="새로 선택")
+        middle_label.config(text="귀찮아 결제해")
     else:
         pass
 

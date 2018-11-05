@@ -85,9 +85,10 @@ def CenterClick():
         right_label.config(text="종료! 및 계산!")
         middle_label.config(text="--------")
         flag = 3
-    i = -1
-    j = 0
-    k = 1
+    if not flag == 3:
+        i = -1
+        j = 0
+        k = 1
 
 def rightClick():
     global db_tmp, catlist, flag, i, j, k
@@ -113,15 +114,15 @@ def rightClick():
             scr.insert(tk.INSERT, "\n\n\n\n")
             num = 0
             for i in result:
-                scr.insert(tk.INSERT, str(i) + "\n")
-                num = num + i[1]
+                scr.insert(tk.INSERT, catlist[j][0] + " " + str(catlist[j][1]) + "원\n")
+                num = num + catlist[j][1]
             scr.insert(tk.INSERT, "등의 항목이 선택 되었습니다!\n 총 금액은 "+str(num)+"\\ 입니다.\n감사합니다.")
     else:
         pass
 
 def leftClick():
     global db_tmp, catlist, flag, i, j, k
-    if flag == 1 or flag == 2:
+    if flag == 1 or flag == 2 or flag == 4:
         if i < 0:
             i = len(catlist) - 1
         elif j < 0:
@@ -140,10 +141,11 @@ def leftClick():
             middle_label.config(text=str(catlist[j][0]))
             right_label.config(text=str(catlist[k][0]))
     elif flag == 3:
-        scr.insert("기존의 카테고리에서 선택하시기를 원하시면 왼쪽\n새로운 카테고리를 원하시면 오른쪽을 눌러주세요.\n")
+        scr.insert(tk.INSERT, "기존의 카테고리에서 선택하시기를 원하시면 왼쪽\n새로운 카테고리를 원하시면 오른쪽을 눌러주세요.\n")
         left_label.config(text="현 카테고리")
         right_label.config(text="새로 선택")
         middle_label.config(text="귀찮아 결제해")
+        flag = 4
     else:
         pass
 

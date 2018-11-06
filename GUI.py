@@ -1,3 +1,10 @@
+import sys
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
+sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
+#======================================================================
+#출력창 한글을 위한 모듈__ 본 프로젝트와는 관련 없음
+
 import tkinter as tk
 from tkinter import ttk
 from tkinter import font
@@ -13,7 +20,7 @@ db_tmp = DB.DBlist(_host="202.31.147.29",_db="kioskmenu", _user="guest", _passwo
 flag = 0
 i, j, k = 0, 0, 0
 catlist = db_tmp.get_cat()
-result = []
+result = {}
 
 #==============================================================================
 # Create GUI instance
@@ -67,7 +74,6 @@ def CenterClick():
         right_label.config(text=str(catlist[1]))
         flag = 1
     elif flag == 1:
-        result.append(catlist[i])
         scr.insert(tk.INSERT, str(catlist[j])+" 선택 완료!\n해당 메뉴 목록을 불러옵니다.")
         scr.insert(tk.INSERT, "===============\n아이템 항목 출력\n")
         itemlist = db_tmp.get_item(catlist[j])
@@ -80,7 +86,16 @@ def CenterClick():
         flag = 2
 
     elif flag == 2:
-        scr.insert(tk.INSERT, "===================================================\n해당 메뉴가 선택 되었씁니다! 더 고르실려면 왼쪽 그렇지 않다면 오른쪽을 눌러주세요!\n")
+        scr.insert(tk.INSERT, "===================================================\n")
+        scr.insert(tk.INSERT,"해당 메뉴가 선택 되었씁니다! 더 고르실려면 왼쪽 그렇지 않다면 오른쪽을 눌러주세요!\n")
+
+        if not catlist[j] in result:
+            result[catlist[j]] = 1
+        else:
+            result[catlist[j]] = result[catlist[j]].pop(catlist[j]) + 1
+        print(result)
+        print("\n")
+
         left_label.config(text="추가!")
         right_label.config(text="종료! 및 계산!")
         middle_label.config(text="--------")
@@ -91,7 +106,7 @@ def CenterClick():
         k = 1
 
 def rightClick():
-    global db_tmp, catlist, flag, i, j, k
+    global db_tmp, catlist, flag, i, j, k, result
     if flag == 1 or flag == 2:
         i = i + 1
         j = j + 1
@@ -111,17 +126,19 @@ def rightClick():
             middle_label.config(text=str(catlist[j][0]))
             right_label.config(text=str(catlist[k][0]))
     elif flag == 3:
-            scr.insert(tk.INSERT, "\n\n\n\n")
+            scr.insert(tk.INSERT, "\n\n")
             num = 0
-            for i in result:
-                scr.insert(tk.INSERT, catlist[j][0] + " " + str(catlist[j][1]) + "원\n")
-                num = num + catlist[j][1]
-            scr.insert(tk.INSERT, "등의 항목이 선택 되었습니다!\n 총 금액은 "+str(num)+"\\ 입니다.\n감사합니다.")
+            k_list = result.keys()
+            for i in k_list:
+                scr.insert(tk.INSERT, str(i[0]) + " " + str(i[1] * result.get(i)) + "원\n")
+                num = num + i[1] * result.get(i)
+            scr.insert(tk.INSERT, "======================\n총 금액 " + str(num) + "원\n")
+            exit()
     else:
         pass
 
 def leftClick():
-    global db_tmp, catlist, flag, i, j, k
+    global db_tmp, catlist, flag, i, j, k, result
     if flag == 1 or flag == 2 or flag == 4:
         if i < 0:
             i = len(catlist) - 1

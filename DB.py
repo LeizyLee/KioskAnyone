@@ -27,6 +27,3 @@ class DBlist:
             if not i[1][3:] in tmp:
                 tmp.append(i[1][3:])
         return tmp
-
-    def __del__(self):
-        self.conn.close()

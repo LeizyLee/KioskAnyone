@@ -5,10 +5,11 @@ make_wave = mic.getWaveFile()
 make_wave.run()
 GCS.run_quickstart()
 """
-import DB
+from remake import DB
 import tkinter
 from tkinter import ttk
 from PIL import Image, ImageTk
+
 
 
 root = '' #Main Window object

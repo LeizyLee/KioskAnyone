@@ -28,4 +28,4 @@ python -m pip install --only-binary :all: mysqlclient
 
 ## 2019-03-12
 - GUI 코드 다시 작성함
-- 
+- 다시 다 갈아엎음

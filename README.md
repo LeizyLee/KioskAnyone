@@ -23,5 +23,7 @@ python -m pip install --only-binary :all: mysqlclient
 - DB 종료시 나타나는 에러 개선
 - 기존에 1개의 메뉴만 고르는 프로그램에서 N개의 메뉴로 확장
 
+
 ## 2019-03-12
-- 얼굴 인식 작업 
+- GUI 코드 다시 작성함
+- ~ㅁㄴㅇㄴㅁ~

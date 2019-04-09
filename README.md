@@ -7,7 +7,7 @@ python3 -m pip install --upgrade pip
 Django에서 mysql.h가 없을 때 mysqlclient 설치 방법  
 python -m pip install --only-binary :all: mysqlclient  
   
-* ~사용한 모듈
+* 사용한 모듈
   * tkinter
   * pymysql
   
@@ -21,7 +21,9 @@ python -m pip install --only-binary :all: mysqlclient
 ## 2018-11-09 
 - GUI 결제창 개선
 - DB 종료시 나타나는 에러 개선
-- 기존에 1개의 메뉴만 고르는 프로그램에서 N개의 메뉴로 확장~
+- 기존에 1개의 메뉴만 고르는 프로그램에서 N개의 메뉴로 확장
+
+
 
 
 ## 2019-03-12

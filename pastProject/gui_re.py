@@ -17,11 +17,11 @@ def resized_img(src):
 #===============================================================================
 
 root = tkinter.Tk()
-mighty = ttk.Frame(root)
+self = ttk.Frame(root)
 root.title("Lazy Lee")
 root.geometry("700x300")
 root.resizable(True, True)
-mighty.pack(fill=None, expand=True)
+self.pack(fill=None, expand=True)
 
 #===============================================================================
 # 변수 선언
@@ -37,13 +37,13 @@ status = 0
 #===============================================================================
 # 프레임 생성
 #===============================================================================
-UpFrame = ttk.Frame(mighty)
+UpFrame = ttk.Frame(self)
 UpFrame.grid(column=0, row=0)
 
-DownFrame = ttk.Frame(mighty)
+DownFrame = ttk.Frame(self)
 DownFrame.grid(column=0, row=1)
 
-MidFrame = ttk.Frame(mighty)
+MidFrame = ttk.Frame(self)
 MidFrame.grid(column=0, row=2)
 
 #===============================================================================

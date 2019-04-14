@@ -88,7 +88,7 @@ def UsingGCS(checklist, menuData):
     result = []
     tmp = []
 
-    from GoogleCloud import googleCloudSpeech, sound_recorder
+    from remake.GoogleCloud import googleCloudSpeech, sound_recorder
 
     getUserOpinion = sound_recorder.getWaveFile()
     getUserOpinion.run()

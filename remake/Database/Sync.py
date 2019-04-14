@@ -23,7 +23,6 @@ class SyncCursor:
     def insert_data(self, img_src):
         sql_insert_blob_query = "INSERT INTO menu.menulist VALUES (%s, %s, %s, %s, %s, %s, %s)"
 
-
         image = self.ImageConvertToBinaryData(img_src)
 
         insert_blob_tuple = (1, image, img_src.split('/')[-1], img_src)
@@ -43,6 +42,37 @@ class SyncCursor:
         #image = self.ImageConvertToBinaryData(dir)
 
         insert_blob_tuple = ()
+
+    def deploy_image(self):
+        print("Checking res Directory exist\n")
+        if not os.path.isdir("C:/res"):
+            print("Can't find res Directory...\nprocessing make res")
+            os.mkdir('C:/res')
+            os.mkdir('C:/res/korea')
+            os.mkdir('C:/res/china')
+            os.mkdir('C:/res/japan')
+        elif not os.path.isdir('C:/res/korea') or not os.path.isdir('C:/res/china') or not os.path.isdir('C:/res/japan'):
+            os.mkdir('C:/res/korea')
+            os.mkdir('C:/res/china')
+            os.mkdir('C:/res/japan')
+        else:
+            print("already exist")
+        print("Next step....\n")
+        self.cur.execute("SELECT * FROM menu.menulist")
+
+        #write_file(data, 저장 경로):
+        print("Getting Image...")
+        data = self.cur.fetchall()
+        count = self.cur.rowcount
+        num = 1
+        for i in data:
+            print(i[:-1])
+            print(str("%0.1f"%float(num/count*100)) + '%...')
+            num = num + 1
+            dir_list = i[-2].split("\\")
+            src = dir_list[-1]
+            self.write_file(i[-1], src)
+        print("Getting Image... Complete!")
 
 
     def getting_image(self, _loadingURL):
@@ -72,14 +102,13 @@ if __name__ == "__main__":
     import os
 
     src = 'C:/Users/User/Desktop/image'
-    dir = os.listdir('C:/Users/User/Desktop/image')
+    #dir = os.listdir('C:/Users/User/Desktop/image')
     #item = [src+'/'+i for i in dir if '.jpg' in i or '.png' in i] #'C:/Users/User/Desktop/image/doge.png'
-    dbsync = SyncCursor('localhost', 'menu', 'admin', 'qwe123!!@@')
+    dbsync = SyncCursor('202.31.147.28', 'menu', 'admin', 'qwe123!!@@')
     #dbsync.insert_PickImage(1, '참치찌개', '밥, 기름, 국, 매운, 찌개', 4000)
     #dbsync.getting_image('C:/res/')
-    print(dbsync.get_dir())
-
-
+    #print(dbsync.get_dir())
+    dbsync.deploy_image()
     """
     print(os.path.isdir(src+'/Kioskimg'))
     print(os.getcwd().replace('\\','/'))

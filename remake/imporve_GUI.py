@@ -24,7 +24,6 @@ def resized_img(src):
     tmp2 = tmp.resize((200, 200))
     return (tmp2)
 
-
 class MainApplication(tkinter.Frame):
     def __init__(self, parent, *args, **kwargs):
         tkinter.Frame.__init__(self, parent, *args, **kwargs)
@@ -101,8 +100,9 @@ class MainApplication(tkinter.Frame):
 
     def center_action(self):
         pass
+
     # 유저 카테고리 윈도우
-    def UserCategory(self):
+    def make_subMain(self):
         root = tkinter.Toplevel(self.parent)
         app = UserCat(root)
 
@@ -143,8 +143,8 @@ class UserCat:
         self.CheckBox_list[5].grid(column=1, row=5)
         self.CheckBox_list[5].config(text="고기")
 
-        self.img = [ImageTk.PhotoImage(resized_img('C:/Users/User/Desktop/image/userCat/' + str(i + 1) + '.jpg')) for i in
-               range(0, 6)]
+        self.img = [ImageTk.PhotoImage(resized_img('C:/Users/User/Desktop/image/userCat/' + str(i + 1) + '.jpg')) for i
+                    in range(0, 6)]
         for i in range(0, 6):
             self.label_list[i].config(image=self.img[i])
 
@@ -156,12 +156,10 @@ class UserCat:
         self.label_list[5].grid(column=1, row=4)
 
         self.SelectButton = tkinter.Button(self.DownFrame, text="다 골랐다면 눌러주세요!",
-                                      command=lambda: self.button_press(menuData)).grid(column=0,
-                                                                                                           row=0)
+                                           command=lambda: self.button_press(menuData)).grid(column=0, row=0)
 
         self.MicBtn = tkinter.Button(self.DownFrame, text="취향 조사",
-                                command=lambda: self.UsingGCS(menuData)).grid(column=0, row=1)
-
+                                     command=lambda: self.UsingGCS(menuData)).grid(column=0, row=1)
 
     def button_press(self, menuData):
         userData = [i[2:3] for i in menuData]
@@ -233,21 +231,19 @@ class UserCat:
                 self.show_result(result)
             except IndexError as e:
                 print("일치하는 결과가 없습니다~")
-            finally:
-                print("끝\n")
 
     def show_result(self, result):
         sub_main = tkinter.Toplevel(self.root)
-        sub_app = result_app(sub_main, result)
+        sub_app = Demo3(sub_main, result)
 
     def __del__(self, master):
         self.root.destroy()
 
-class reuslt_app:
-    def __init__(self, root, result):
-        self.root = root
+class Demo3:
+    def __init__(self, sub_main, result):
+        self.root = sub_main
 
-        mighty = ttk.Frame(root)
+        mighty = ttk.Frame(self.root)
         root.title("결과 화면")
         root.resizable(True, True)
         mighty.pack(fill=None, expand=True)

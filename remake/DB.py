@@ -1,5 +1,5 @@
 class DBlist:
-    def __init__(self, _host='localhost', _user='root', _password='0000', _db='menu', _charset='utf8'):
+    def __init__(self, _host='202.31.147.28', _user='admin', _password='qwe123!!@@', _db='menu', _charset='utf8'):
         try:
             import pymysql
         except ImportError:

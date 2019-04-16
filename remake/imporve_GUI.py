@@ -2,7 +2,10 @@
 from remake import DB
 import tkinter
 from tkinter import ttk
+from tkinter import scrolledtext
 from PIL import Image, ImageTk
+import threading
+
 
 
 # ===============================================================================
@@ -25,22 +28,54 @@ def resized_img(src):
     tmp2 = tmp.resize((200, 200))
     return (tmp2)
 
-class MainApplication(tkinter.Frame):
+class MainApplication(tkinter.Frame, threading.Thread):
     def __init__(self, parent, *args, **kwargs):
+        threading.Thread.__init__(self)
+        self.daemon = True
+        self.start()
         tkinter.Frame.__init__(self, parent, *args, **kwargs)
         self.parent = parent
-
+        self.modeNum = 0
+        self.Lnum, self.Mnum, self.Rnum = 0, 0, 1
+        self.menu_control = []
         # ===============================================================================
         # 프레임 생성
         # ===============================================================================
-        self.UpFrame = ttk.Frame(self)
+        self.leftFrame = ttk.Frame(self)
+        self.leftFrame.grid(column=0, row=0)
+
+        self.RightFrame = ttk.Frame(self)
+        self.RightFrame.grid(column=1, row=0)
+
+        self.UpFrame = ttk.Frame(self.leftFrame)
         self.UpFrame.grid(column=0, row=0)
 
-        self.DownFrame = ttk.Frame(self)
+        self.DownFrame = ttk.Frame(self.leftFrame)
         self.DownFrame.grid(column=0, row=1)
 
-        self.MidFrame = ttk.Frame(self)
+        self.MidFrame = ttk.Frame(self.leftFrame)
         self.MidFrame.grid(column=0, row=2)
+
+        # ===============================================================================
+        #   위젯 프레임
+        # ===============================================================================
+        self.left_widget = ttk.Frame(self.UpFrame)
+        self.left_widget.grid(column=0, row=0)
+
+        self.middle_widget = ttk.Frame(self.UpFrame)
+        self.middle_widget.grid(column=1, row=0)
+
+        self.right_widget = ttk.Frame(self.UpFrame)
+        self.right_widget.grid(column=2, row=0)
+
+        # ===============================================================================
+        #   스크롤바 생성
+        # ===============================================================================
+        self.scr_w = 28
+        self.scr_h = 24
+        self.scr = scrolledtext.ScrolledText(self.RightFrame, width=self.scr_w, height=self.scr_h, wrap=tkinter.WORD)
+        self.scr.grid(column=3,row=3)
+
 
 
         # ===============================================================================
@@ -51,20 +86,37 @@ class MainApplication(tkinter.Frame):
         self.images['china'] = ImageTk.PhotoImage(resized_img('C:/Users/User/Desktop/image/Kioskimg/china.png'))
         self.images['korea'] = ImageTk.PhotoImage(resized_img('C:/Users/User/Desktop/image/Kioskimg/korea.png'))
         self.images['japan'] = ImageTk.PhotoImage(resized_img('C:/Users/User/Desktop/image/Kioskimg/japan.png'))
-        self.KorImages = {i[2]: i[-2] for i in data if i[1] == 'korea'}.values()
-        self.JapImages = {i[2]:i[-2] for i in data if i[1] == 'japan'}
-        self.ChiImages = {i[2]:i[-2] for i in data if i[1] == 'china'}
-        print(self.KorImages)
+        self.KorData = [[i[0], i[2], i[3], i[4], ImageTk.PhotoImage(resized_img(i[5]))] for i in data if i[1] == 'korea']
+        self.JapData = [[i[0], i[2], i[3], i[4], ImageTk.PhotoImage(resized_img(i[5]))] for i in data if i[1] == 'japan']
+        self.ChiData = [[i[0], i[2], i[3], i[4], ImageTk.PhotoImage(resized_img(i[5]))] for i in data if i[1] == 'china']
+        # Data = 번호, 이름, 속성, 가격, 이미지 객체
+
+        print(self.KorData[-1])
+        # list(list[0].values) = 경로, list(list[0].keys()) = 이름
+        # 그럼 list = [ImageTk.PhotoImage(resized_img(list(i.values())[0])) for i in KorImages]
+        # ====> 레퍼런스를 유지한 이미지 객체 생성 완료료
 
 
-        self.left_label = tkinter.Label(self.UpFrame, image=self.images['china'])
+        self.left_label = tkinter.Label(self.left_widget, image=self.images['china'])
         self.left_label.grid(column=0, row=0)
 
-        self.center_label = tkinter.Label(self.UpFrame, image=self.images['korea'])
-        self.center_label.grid(column=1, row=0)
+        self.center_label = tkinter.Label(self.middle_widget, image=self.images['korea'])
+        self.center_label.grid(column=0, row=0)
 
-        self.right_label = tkinter.Label(self.UpFrame, image=self.images['japan'])
-        self.right_label.grid(column=2, row=0)
+        self.right_label = tkinter.Label(self.right_widget, image=self.images['japan'])
+        self.right_label.grid(column=0, row=0)
+
+        # ===============================================================================
+        #   메뉴 정보 라벨
+        # ===============================================================================
+        self.left_info = tkinter.Label(self.left_widget)
+        self.left_info.grid(column=0, row=1)
+
+        self.mid_info = tkinter.Label(self.middle_widget)
+        self.mid_info.grid(column=0, row=1)
+
+        self.right_info = tkinter.Label(self.right_widget)
+        self.right_info.grid(column=0, row=1)
 
         # ===============================================================================
         #  버튼 생성
@@ -73,6 +125,7 @@ class MainApplication(tkinter.Frame):
         self.Lbtn.config(text="  중식  ", font=('', 15))
         self.Lbtn.grid(column=0, row=0)
         self.Lbtn.grid_configure(padx=0, pady=4)
+
 
 
         self.Rbtn = tkinter.Button(self.DownFrame, command=self.right_action)
@@ -93,31 +146,86 @@ class MainApplication(tkinter.Frame):
     # ===============================================================================
     #  버튼 이벤트
     # ===============================================================================
+    def move_left(self):
+        if self.Lnum == 0:
+            self.Lnum = len(self.menu_control) - 1
+            self.Rnum = 1
+            self.Mnum = 0
+        else:
+            self.Rnum = self.Mnum
+            self.Mnum = self.Lnum
+            self.Lnum = self.Lnum - 1
+
+    def move_right(self):
+        if self.Rnum == len(self.menu_control) - 1:
+            self.Rnum = 0
+            self.Mnum = len(self.menu_control) - 1
+            self.Lnum = len(self.menu_control) - 2
+        else:
+            self.Lnum = self.Mnum
+            self.Mnum = self.Rnum
+            self.Rnum = self.Rnum + 1
+
+    def set_image(self):
+        self.left_label.config(image=self.menu_control[self.Lnum][-1])
+        self.right_label.config(image=self.menu_control[self.Rnum][-1])
+        self.center_label.config(image=self.menu_control[self.Mnum][-1])
+
+        self.left_info.config(text=str(self.menu_control[self.Lnum][1] + '\n' + str(self.menu_control[self.Lnum][3])))
+        self.mid_info.config(text=str(self.menu_control[self.Mnum][1] + '\n' + str(self.menu_control[self.Mnum][3])))
+        self.right_info.config(text=str(self.menu_control[self.Rnum][1] + '\n' + str(self.menu_control[self.Rnum][3])))
+
+    def btnTextSet(self):
+        self.Lbtn.config(text="<---")
+        self.button.config(text="선택")
+        self.Rbtn.config(text="--->")
+
     def left_action(self):
+        if self.modeNum == 0:
+            self.menu_control = self.ChiData.copy()
+            self.Lnum = len(self.menu_control) - 1
+            self.btnTextSet()
+            self.set_image()
+            self.modeNum = 1
+        elif self.modeNum == 1:
+            self.move_left()
+            self.set_image()
         pass
 
     def right_action(self):
+        if self.modeNum == 0:
+            self.menu_control = self.JapData.copy()
+            self.Lnum = len(self.menu_control) - 1
+            self.btnTextSet()
+            self.set_image()
+            self.modeNum = 1
+        elif self.modeNum == 1:
+            self.move_right()
+            self.set_image()
         pass
 
     def center_action(self):
+        if self.modeNum == 0:
+            self.menu_control = self.KorData.copy()
+            self.Lnum = len(self.menu_control) - 1
+            self.btnTextSet()
+            self.set_image()
+            self.modeNum = 1
         pass
 
     # 유저 카테고리 윈도우
     def make_subMain(self):
-        root = tkinter.Toplevel(self.parent)
-        sub_win = UserCat(root)
+        self.new_window = tkinter.Toplevel(self.parent)
+        self.sub_win = UserCat(self.new_window)
 
-    def __del__(self):
-        return
 
 
 class UserCat:
-    def __init__(self, root):
-        self.root = root
-        self.root = tkinter.Tk()
+    def __init__(self, sub_win):
+        self.root = sub_win
         self.mighty = ttk.Frame(self.root)
         self.root.title("취향 조사")
-        self.root.geometry("450x720")
+        self.root.geometry("450x730")
         self.root.resizable(True, True)
         self.mighty.pack(fill=None, expand=True)
 
@@ -233,33 +341,32 @@ class UserCat:
                 print("일치하는 결과가 없습니다~")
 
     def show_result(self, result):
-        sub_main = tkinter.Toplevel(self.root)
-        sub_app = Demo3(sub_main, result)
+        self.new_window = tkinter.Toplevel(self.root)
+        self.sub_app = Demo3(self.new_window, result)
+        pass
 
-    def __del__(self):
-        return
 
 class Demo3:
     def __init__(self, sub_main, result):
         self.root = sub_main
 
-        mighty = ttk.Frame(self.root)
-        root.title("결과 화면")
-        root.resizable(True, True)
-        mighty.pack(fill=None, expand=True)
+        self.mighty = ttk.Frame(self.root)
+        self.root.title("결과 화면")
+        self.root.resizable(True, True)
+        self.mighty.pack(fill=None, expand=True)
 
-        list_num = len(result)
-        src = [i[-2].replace('\\','/') for i in result]
+        self.list_num = len(result)
+        self.src = [i[-2].replace('\\','/') for i in result]
         print(src[0])
-        Imgsrc = [ImageTk.PhotoImage(resized_img(src[i])) for i in range(0,list_num)]
-        label_list = [tkinter.Label(mighty, image=Imgsrc[i]) for i in range(0, list_num)]
-        row = 0
-        for i in range(0, list_num):
+        self.Imgsrc = [ImageTk.PhotoImage(resized_img(src[i])) for i in range(0,self.list_num)]
+        self.label_list = [tkinter.Label(self.mighty, image=self.Imgsrc[i]) for i in range(0, self.list_num)]
+        self.row = 0
+        for i in range(0, self.list_num):
             if i%2 == 0:
-                row = row + 1
-            label_list[i].grid(column=i%2, row=row)
-        print(row)
-        root.geometry(str(450)+'x'+str(row*200+50))
+                self.row = self.row + 1
+            self.label_list[i].grid(column=i%2, row=self.row)
+        print(self.row)
+        self.root.geometry(str(450)+'x'+str(self.row*200+50))
 
     def __del__(self):
         return
@@ -267,7 +374,7 @@ class Demo3:
 if __name__ == "__main__":
     root = tkinter.Tk()
     root.title("OpenKiosk")
-    root.geometry("700x300")
-    root.resizable(True, True)
+    root.geometry("850x320")
+    root.resizable(False, False)
     MainApplication(root).pack()
     root.mainloop()

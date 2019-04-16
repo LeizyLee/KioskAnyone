@@ -99,7 +99,7 @@ label_list[3].grid(column=1, row=2)
 label_list[4].grid(column=0, row=4)
 label_list[5].grid(column=1, row=4)
 
-SelectButton = tkinter.Button(DownFrame,text="다 골랐다면 눌러주세요!",command=lambda:button_press(checkboxVar, checklist, menuData)).grid(column=0,row=0)
+SelectButton = tkinter.Button(self.DownFrame,text="다 골랐다면 눌러주세요!",command=lambda:button_press(checkboxVar, checklist, menuData)).grid(column=0,row=0)
 
 root.mainloop()
 

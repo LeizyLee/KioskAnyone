@@ -4,6 +4,7 @@ import tkinter
 from tkinter import ttk
 from PIL import Image, ImageTk
 
+
 # ===============================================================================
 # DB 접속
 # ===============================================================================
@@ -32,62 +33,62 @@ class MainApplication(tkinter.Frame):
         # ===============================================================================
         # 프레임 생성
         # ===============================================================================
-        UpFrame = ttk.Frame(self)
-        UpFrame.grid(column=0, row=0)
+        self.UpFrame = ttk.Frame(self)
+        self.UpFrame.grid(column=0, row=0)
 
-        DownFrame = ttk.Frame(self)
-        DownFrame.grid(column=0, row=1)
+        self.DownFrame = ttk.Frame(self)
+        self.DownFrame.grid(column=0, row=1)
 
-        MidFrame = ttk.Frame(self)
-        MidFrame.grid(column=0, row=2)
+        self.MidFrame = ttk.Frame(self)
+        self.MidFrame.grid(column=0, row=2)
 
-        # 위젯 컨테이너
-        Up_left = ttk.Frame(UpFrame)
-        Up_right = ttk.Frame(UpFrame)
-        Up_center = ttk.Frame(UpFrame)
-        Up_left.grid(column=0, row=0)
-        Up_center.grid(column=1, row=0)
-        Up_right.grid(column=2, row=0)
 
         # ===============================================================================
         # 상단 이미지 라벨 생성
         # ===============================================================================
         src = 'C:\\Users\\User\\Desktop\\image\\Kioskimg'.replace('\\', '/')
-        china_img = ImageTk.PhotoImage(Image.open(src + '/china.png'))
-        left_label = tkinter.Label(Up_left, image=china_img)
-        left_label.grid(column=0, row=0)
+        self.images = {}
+        self.images['china'] = ImageTk.PhotoImage(resized_img('C:/Users/User/Desktop/image/Kioskimg/china.png'))
+        self.images['korea'] = ImageTk.PhotoImage(resized_img('C:/Users/User/Desktop/image/Kioskimg/korea.png'))
+        self.images['japan'] = ImageTk.PhotoImage(resized_img('C:/Users/User/Desktop/image/Kioskimg/japan.png'))
+        self.KorImages = {i[2]: i[-2] for i in data if i[1] == 'korea'}.values()
+        self.JapImages = {i[2]:i[-2] for i in data if i[1] == 'japan'}
+        self.ChiImages = {i[2]:i[-2] for i in data if i[1] == 'china'}
+        print(self.KorImages)
 
-        korea_img = ImageTk.PhotoImage(Image.open(src + '/korea.png'))
-        center_label = tkinter.Label(Up_center, image=korea_img)
-        center_label.grid(column=1, row=0)
 
-        japan_img = ImageTk.PhotoImage(Image.open(src + '/japan.png'))
-        right_label = tkinter.Label(Up_right, image=japan_img)
-        right_label.grid(column=2, row=0)
+        self.left_label = tkinter.Label(self.UpFrame, image=self.images['china'])
+        self.left_label.grid(column=0, row=0)
+
+        self.center_label = tkinter.Label(self.UpFrame, image=self.images['korea'])
+        self.center_label.grid(column=1, row=0)
+
+        self.right_label = tkinter.Label(self.UpFrame, image=self.images['japan'])
+        self.right_label.grid(column=2, row=0)
 
         # ===============================================================================
         #  버튼 생성
         # ===============================================================================
-        Lbtn = tkinter.Button(DownFrame, command=self.left_action)
-        Lbtn.config(text="  중식  ", font=('', 15))
-        Lbtn.grid(column=0, row=0)
-        Lbtn.grid_configure(padx=0, pady=4)
+        self.Lbtn = tkinter.Button(self.DownFrame, command=self.left_action)
+        self.Lbtn.config(text="  중식  ", font=('', 15))
+        self.Lbtn.grid(column=0, row=0)
+        self.Lbtn.grid_configure(padx=0, pady=4)
 
 
-        Rbtn = tkinter.Button(DownFrame, command=self.right_action)
-        Rbtn.config(text="  일식  ", font=('', 15))
-        Rbtn.grid(column=2, row=0)
-        Rbtn.grid_configure(padx=0, pady=4)
+        self.Rbtn = tkinter.Button(self.DownFrame, command=self.right_action)
+        self.Rbtn.config(text="  일식  ", font=('', 15))
+        self.Rbtn.grid(column=2, row=0)
+        self.Rbtn.grid_configure(padx=0, pady=4)
 
 
 
-        button = tkinter.Button(DownFrame, command=self.center_action)
-        button.config(text="  한식  ", font=('', 15))
-        button.grid(column=1, row=0)
-        button.grid_configure(padx=125, pady=4)
+        self.button = tkinter.Button(self.DownFrame, command=self.center_action)
+        self.button.config(text="  한식  ", font=('', 15))
+        self.button.grid(column=1, row=0)
+        self.button.grid_configure(padx=125, pady=4)
 
-        User_button = tkinter.Button(DownFrame, text="카테고리 입력", command=lambda: self.UserCategory())
-        User_button.grid(column=1, row=1)
+        self.User_button = tkinter.Button(self.DownFrame, text="카테고리 입력", command=lambda: self.make_subMain())
+        self.User_button.grid(column=1, row=1)
 
     # ===============================================================================
     #  버튼 이벤트
@@ -104,7 +105,7 @@ class MainApplication(tkinter.Frame):
     # 유저 카테고리 윈도우
     def make_subMain(self):
         root = tkinter.Toplevel(self.parent)
-        app = UserCat(root)
+        sub_win = UserCat(root)
 
     def __del__(self):
         return
@@ -185,7 +186,6 @@ class UserCat:
         self.show_result(result)
 
     def find_tag(self, text):
-        checklist = ['밥', '면', '국', '튀김', '매운', '고기']
         result = []
         if '밥' in text:
             result.append('밥')
@@ -236,8 +236,8 @@ class UserCat:
         sub_main = tkinter.Toplevel(self.root)
         sub_app = Demo3(sub_main, result)
 
-    def __del__(self, master):
-        self.root.destroy()
+    def __del__(self):
+        return
 
 class Demo3:
     def __init__(self, sub_main, result):
@@ -260,15 +260,14 @@ class Demo3:
             label_list[i].grid(column=i%2, row=row)
         print(row)
         root.geometry(str(450)+'x'+str(row*200+50))
-        result = ''
 
     def __del__(self):
-        self.root.destroy()
+        return
 
 if __name__ == "__main__":
     root = tkinter.Tk()
-    root.title("취향 조사")
-    root.geometry("450x720")
+    root.title("OpenKiosk")
+    root.geometry("700x300")
     root.resizable(True, True)
-    MainApplication(root).pack(side="top", fill="both", expand=True)
+    MainApplication(root).pack()
     root.mainloop()

@@ -2,13 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="100ea7a9-e184-4d39-9d51-a7f2b029c183" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/remake/test_file/usingPackGUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remake/gui.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/remake/imporve_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/remake/imporve_GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remake/test_file/gui.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pyqt5_tools-5.11.3.1.4.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/pyqt5_tools-5.11.3.1.4.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/assistant.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/assistant.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/canbusutil.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/canbusutil.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/designer.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/designer.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/dumpcpp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/dumpcpp.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/dumpdoc.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/dumpdoc.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/lconvert.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/lconvert.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/linguist.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/linguist.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/lrelease.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/lrelease.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/lupdate.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/lupdate.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pixeltool.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pixeltool.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pyqt5designer.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pyqt5designer.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pyqt5qmlscene.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pyqt5qmlscene.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pyqt5qmltestrunner.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pyqt5qmltestrunner.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pyqt5toolsinstalluic.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pyqt5toolsinstalluic.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qcollectiongenerator.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qcollectiongenerator.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qdbus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qdbus.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qdbuscpp2xml.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qdbuscpp2xml.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qdbusviewer.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qdbusviewer.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qdbusxml2cpp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qdbusxml2cpp.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qdoc.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qdoc.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qgltf.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qgltf.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qhelpconverter.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qhelpconverter.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qhelpgenerator.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qhelpgenerator.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qlalr.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qlalr.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qml.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qml.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qmlcachegen.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qmlcachegen.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qmleasing.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qmleasing.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qmlimportscanner.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qmlimportscanner.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qmllint.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qmllint.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qmlmin.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qmlmin.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qmlplugindump.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qmlplugindump.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qmlprofiler.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qmlprofiler.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qmlscene.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qmlscene.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qmltestrunner.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qmltestrunner.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qscxmlc.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qscxmlc.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qtattributionsscanner.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qtattributionsscanner.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qtdiag.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qtdiag.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qtpaths.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qtpaths.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qtplugininfo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qtplugininfo.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/qvkgen.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/qvkgen.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/repc.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/repc.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/testcon.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/testcon.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/uic.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/uic.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/xmlpatterns.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/xmlpatterns.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/xmlpatternsvalidator.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/xmlpatternsvalidator.exe" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,27 +58,30 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/OpenKiosk$versioncheck.coverage" NAME="versioncheck Coverage Results" MODIFIED="1555394921918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/AmazonAPI" />
-    <SUITE FILE_PATH="coverage/OpenKiosk$get_dentiment.coverage" NAME="get_dentiment Coverage Results" MODIFIED="1555400023570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/AmazonAPI" />
-    <SUITE FILE_PATH="coverage/OpenKiosk$imporve_GUI.coverage" NAME="imporve_GUI Coverage Results" MODIFIED="1555481098975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake" />
-    <SUITE FILE_PATH="coverage/KioskAnyone$Sync.coverage" NAME="Sync Coverage Results" MODIFIED="1555227162381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/Database" />
-    <SUITE FILE_PATH="coverage/OpenKiosk$gui.coverage" NAME="gui Coverage Results" MODIFIED="1555481083598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/test_file" />
+    <SUITE FILE_PATH="coverage/OpenKiosk$imporve_GUI.coverage" NAME="imporve_GUI Coverage Results" MODIFIED="1555484321550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake" />
     <SUITE FILE_PATH="coverage/KioskAnyone$imporve_GUI.coverage" NAME="imporve_GUI Coverage Results" MODIFIED="1555223140370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake" />
-    <SUITE FILE_PATH="coverage/OpenKiosk$printHello.coverage" NAME="printHello Coverage Results" MODIFIED="1554789504811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OpenKiosk$papago.coverage" NAME="papago Coverage Results" MODIFIED="1554793878293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/NaverAPI" />
     <SUITE FILE_PATH="coverage/OpenKiosk$userInterface.coverage" NAME="userInterface Coverage Results" MODIFIED="1554961805167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake" />
-    <SUITE FILE_PATH="coverage/OpenKiosk$Sync.coverage" NAME="Sync Coverage Results" MODIFIED="1555298256267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/Database" />
     <SUITE FILE_PATH="coverage/OpenKiosk$analyzeReview.coverage" NAME="analyzeReview Coverage Results" MODIFIED="1555400768816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/Database" />
     <SUITE FILE_PATH="coverage/OpenKiosk$usingPackGUI.coverage" NAME="usingPackGUI Coverage Results" MODIFIED="1555482732282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/test_file" />
+    <SUITE FILE_PATH="coverage/OpenKiosk$pyuic.coverage" NAME="pyuic Coverage Results" MODIFIED="1555487345624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Lib/site-packages/PyQt5/uic" />
+    <SUITE FILE_PATH="coverage/OpenKiosk$get_dentiment.coverage" NAME="get_dentiment Coverage Results" MODIFIED="1555400023570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/AmazonAPI" />
+    <SUITE FILE_PATH="coverage/OpenKiosk$linked_list.coverage" NAME="linked_list Coverage Results" MODIFIED="1555487237475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/test_file" />
+    <SUITE FILE_PATH="coverage/KioskAnyone$Sync.coverage" NAME="Sync Coverage Results" MODIFIED="1555227162381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/Database" />
+    <SUITE FILE_PATH="coverage/OpenKiosk$gui.coverage" NAME="gui Coverage Results" MODIFIED="1555481083598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/test_file" />
+    <SUITE FILE_PATH="coverage/OpenKiosk$qtUI.coverage" NAME="qtUI Coverage Results" MODIFIED="1555487778496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qtUI" />
+    <SUITE FILE_PATH="coverage/OpenKiosk$printHello.coverage" NAME="printHello Coverage Results" MODIFIED="1554789504811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/OpenKiosk$Sync.coverage" NAME="Sync Coverage Results" MODIFIED="1555298256267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/Database" />
   </component>
   <component name="DockManager">
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/remake/Database/Sync.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="532">
+                  <state relative-caret-position="1216">
                     <caret line="64" column="34" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
                   </state>
                 </provider>
@@ -47,8 +90,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$USER_HOME$/Desktop/Openkiosk/Alpha.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="246">
-                    <caret line="154" column="63" selection-start-line="154" selection-start-column="63" selection-end-line="154" selection-end-column="63" />
+                  <state relative-caret-position="303">
+                    <caret line="157" column="36" selection-start-line="157" selection-start-column="36" selection-end-line="157" selection-end-column="36" />
                     <folding>
                       <element signature="e#0#20#0" expanded="true" />
                     </folding>
@@ -66,16 +109,40 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/remake/imporve_GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="407" column="23" selection-start-line="407" selection-start-column="23" selection-end-line="407" selection-end-column="23" />
+            <state relative-caret-position="260">
+              <caret line="388" column="48" selection-start-line="388" selection-start-column="48" selection-end-line="388" selection-end-column="48" />
               <folding>
                 <element signature="e#49#70#0" expanded="true" />
-                <element signature="e#4280#6551#0" />
-                <element signature="e#6599#7275#0" />
-                <element signature="e#7315#7700#0" />
-                <element signature="e#7744#8718#0" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/remake/test_file/linked_list.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="551">
+              <caret line="29" column="48" lean-forward="true" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/PyQt5/uic/pyuic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/qtUI/qtUI.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3477" />
           </provider>
         </entry>
       </file>
@@ -86,23 +153,7 @@
               <caret line="147" selection-start-line="147" selection-end-line="147" />
               <folding>
                 <element signature="e#49#70#0" expanded="true" />
-                <element signature="e#10307#12548#0" />
-                <element signature="e#12596#13272#0" />
-                <element signature="e#13312#13697#0" />
-                <element signature="e#13741#14715#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="526">
-                <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -110,7 +161,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/remake/Database/analyzeReview.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
+            <state relative-caret-position="551">
               <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
@@ -122,7 +173,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/remake/userInterface.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
+            <state relative-caret-position="1178">
               <caret line="65" selection-start-line="65" selection-end-line="80" selection-end-column="17" />
             </state>
           </provider>
@@ -171,11 +222,13 @@
         <option value="$PROJECT_DIR$/remake/test_file/gui.py" />
         <option value="$PROJECT_DIR$/remake/test_file/usingPackGUI.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/remake/test_file/linked_list.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+    <option name="x" value="823" />
+    <option name="y" value="5" />
     <option name="width" value="1213" />
     <option name="height" value="1047" />
   </component>
@@ -197,19 +250,12 @@
             <path>
               <item name="OpenKiosk" type="b2602c69:ProjectViewProjectNode" />
               <item name="OpenKiosk" type="462c0819:PsiDirectoryNode" />
-              <item name="remake" type="462c0819:PsiDirectoryNode" />
+              <item name="qtUI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OpenKiosk" type="b2602c69:ProjectViewProjectNode" />
               <item name="OpenKiosk" type="462c0819:PsiDirectoryNode" />
               <item name="remake" type="462c0819:PsiDirectoryNode" />
-              <item name="AmazonAPI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenKiosk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenKiosk" type="462c0819:PsiDirectoryNode" />
-              <item name="remake" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OpenKiosk" type="b2602c69:ProjectViewProjectNode" />
@@ -237,6 +283,11 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\GitHub\OpenKiosk\remake\test_file" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -249,73 +300,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.usingPackGUI">
-    <configuration name="analyzeReview" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="OpenKiosk" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/remake/Database" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/remake/Database/analyzeReview.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="get_dentiment" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="OpenKiosk" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/remake/AmazonAPI" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/remake/AmazonAPI/get_dentiment.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="OpenKiosk" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/remake/test_file" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\User\Documents\GitHub\OpenKiosk\remake\test_file\usingPackGUI.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.qtUI">
     <configuration name="imporve_GUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OpenKiosk" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -330,6 +315,72 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/remake/imporve_GUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="linked_list" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="OpenKiosk" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/remake/test_file" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/remake/test_file/linked_list.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pyuic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="OpenKiosk" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv/Lib/site-packages/PyQt5/uic" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/Lib/site-packages/PyQt5/uic/pyuic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="qtUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="OpenKiosk" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qtUI" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qtUI/qtUI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -362,11 +413,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.usingPackGUI" />
+        <item itemvalue="Python.qtUI" />
+        <item itemvalue="Python.pyuic" />
+        <item itemvalue="Python.linked_list" />
         <item itemvalue="Python.imporve_GUI" />
-        <item itemvalue="Python.gui" />
-        <item itemvalue="Python.analyzeReview" />
-        <item itemvalue="Python.get_dentiment" />
+        <item itemvalue="Python.usingPackGUI" />
       </list>
     </recent_temporary>
   </component>
@@ -387,23 +438,24 @@
       <workItem from="1555220733889" duration="5745000" />
       <workItem from="1555286726938" duration="1645000" />
       <workItem from="1555296598131" duration="6757000" />
-      <workItem from="1555390077928" duration="25393000" />
+      <workItem from="1555390077928" duration="25846000" />
+      <workItem from="1555483881321" duration="1799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62512000" />
+    <option name="totallyTimeSpent" value="64764000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1213" height="1047" extended-state="0" />
+    <frame x="823" y="5" width="1213" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1951431" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19861232" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2694414" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2694414" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -412,7 +464,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32883435" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32858709" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -483,13 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/remake/userInterface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="65" selection-start-line="65" selection-end-line="80" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pymysql/cursors.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -504,9 +549,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/remake/gui.py" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="526">
+            <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/remake/Database/analyzeReview.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
+        <state relative-caret-position="551">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
@@ -514,41 +570,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/remake/userInterface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="65" selection-start-line="65" selection-end-line="80" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/remake/Database/Sync.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
+        <state relative-caret-position="1216">
           <caret line="64" column="34" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/Openkiosk/Alpha.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="154" column="63" selection-start-line="154" selection-start-column="63" selection-end-line="154" selection-end-column="63" />
+        <state relative-caret-position="303">
+          <caret line="157" column="36" selection-start-line="157" selection-start-column="36" selection-end-line="157" selection-end-column="36" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/remake/imporve_GUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="407" column="23" selection-start-line="407" selection-start-column="23" selection-end-line="407" selection-end-column="23" />
-          <folding>
-            <element signature="e#49#70#0" expanded="true" />
-            <element signature="e#4280#6551#0" />
-            <element signature="e#6599#7275#0" />
-            <element signature="e#7315#7700#0" />
-            <element signature="e#7744#8718#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/remake/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
         </state>
       </provider>
     </entry>
@@ -558,22 +600,40 @@
           <caret line="147" selection-start-line="147" selection-end-line="147" />
           <folding>
             <element signature="e#49#70#0" expanded="true" />
-            <element signature="e#10307#12548#0" />
-            <element signature="e#12596#13272#0" />
-            <element signature="e#13312#13697#0" />
-            <element signature="e#13741#14715#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="526">
-            <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/remake/imporve_GUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="388" column="48" selection-start-line="388" selection-start-column="48" selection-end-line="388" selection-end-column="48" />
+          <folding>
+            <element signature="e#49#70#0" expanded="true" />
+          </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/remake/test_file/linked_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" column="48" lean-forward="true" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/PyQt5/uic/pyuic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qtUI/qtUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3477" />
       </provider>
     </entry>
   </component>

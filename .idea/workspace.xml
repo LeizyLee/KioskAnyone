@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="100ea7a9-e184-4d39-9d51-a7f2b029c183" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/remake/Database/Sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/remake/Database/Sync.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remake/imporve_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/remake/imporve_GUI.py" afterDir="false" />
-    </list>
+    <list default="true" id="100ea7a9-e184-4d39-9d51-a7f2b029c183" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -335,23 +332,22 @@
       <workItem from="1554870606301" duration="1243000" />
       <workItem from="1554875207746" duration="2300000" />
       <workItem from="1554959664758" duration="13512000" />
-      <workItem from="1555220733889" duration="5745000" />
+      <workItem from="1555220733889" duration="5785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28717000" />
+    <option name="totallyTimeSpent" value="28757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1294" height="1407" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17666127" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22152396" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22152396" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

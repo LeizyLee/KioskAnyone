@@ -40,3 +40,6 @@ python -m pip install --only-binary :all: mysqlclient
 - GUI 클래스 덮어쓰기는 끝
 - 이미지가 안나오던거 수정함
 - 왼쪽에 계산목록 나오게 수정중
+
+## 2019-04-17
+- ...아무래도 Tk에서 Qt로 바꿔야 할거같다...

@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="100ea7a9-e184-4d39-9d51-a7f2b029c183" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/remake/Database/analyzeReview.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/remake/test_file/usingPackGUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remake/AmazonAPI/versioncheck.py" beforeDir="false" afterPath="$PROJECT_DIR$/remake/AmazonAPI/get_dentiment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remake/NaverAPI/papago.py" beforeDir="false" afterPath="$PROJECT_DIR$/remake/NaverAPI/papago.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/remake/gui.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/remake/imporve_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/remake/imporve_GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/remake/test_file/gui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,15 +19,16 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/OpenKiosk$versioncheck.coverage" NAME="versioncheck Coverage Results" MODIFIED="1555394921918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/AmazonAPI" />
     <SUITE FILE_PATH="coverage/OpenKiosk$get_dentiment.coverage" NAME="get_dentiment Coverage Results" MODIFIED="1555400023570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/AmazonAPI" />
-    <SUITE FILE_PATH="coverage/OpenKiosk$imporve_GUI.coverage" NAME="imporve_GUI Coverage Results" MODIFIED="1555407140596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake" />
+    <SUITE FILE_PATH="coverage/OpenKiosk$imporve_GUI.coverage" NAME="imporve_GUI Coverage Results" MODIFIED="1555481098975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake" />
     <SUITE FILE_PATH="coverage/KioskAnyone$Sync.coverage" NAME="Sync Coverage Results" MODIFIED="1555227162381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/Database" />
-    <SUITE FILE_PATH="coverage/OpenKiosk$gui.coverage" NAME="gui Coverage Results" MODIFIED="1555296165147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake" />
+    <SUITE FILE_PATH="coverage/OpenKiosk$gui.coverage" NAME="gui Coverage Results" MODIFIED="1555481083598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/test_file" />
     <SUITE FILE_PATH="coverage/KioskAnyone$imporve_GUI.coverage" NAME="imporve_GUI Coverage Results" MODIFIED="1555223140370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake" />
     <SUITE FILE_PATH="coverage/OpenKiosk$printHello.coverage" NAME="printHello Coverage Results" MODIFIED="1554789504811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/OpenKiosk$papago.coverage" NAME="papago Coverage Results" MODIFIED="1554793878293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/NaverAPI" />
     <SUITE FILE_PATH="coverage/OpenKiosk$userInterface.coverage" NAME="userInterface Coverage Results" MODIFIED="1554961805167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake" />
     <SUITE FILE_PATH="coverage/OpenKiosk$Sync.coverage" NAME="Sync Coverage Results" MODIFIED="1555298256267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/Database" />
     <SUITE FILE_PATH="coverage/OpenKiosk$analyzeReview.coverage" NAME="analyzeReview Coverage Results" MODIFIED="1555400768816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/Database" />
+    <SUITE FILE_PATH="coverage/OpenKiosk$usingPackGUI.coverage" NAME="usingPackGUI Coverage Results" MODIFIED="1555482732282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/remake/test_file" />
   </component>
   <component name="DockManager">
     <window id="1">
@@ -36,8 +38,8 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/remake/Database/Sync.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1767">
-                    <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+                  <state relative-caret-position="532">
+                    <caret line="64" column="34" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
                   </state>
                 </provider>
               </entry>
@@ -45,7 +47,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$USER_HOME$/Desktop/Openkiosk/Alpha.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-4275">
+                  <state relative-caret-position="246">
+                    <caret line="154" column="63" selection-start-line="154" selection-start-column="63" selection-end-line="154" selection-end-column="63" />
                     <folding>
                       <element signature="e#0#20#0" expanded="true" />
                     </folding>
@@ -63,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/remake/imporve_GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="368" column="61" lean-forward="true" selection-start-line="368" selection-start-column="61" selection-end-line="368" selection-end-column="61" />
+            <state relative-caret-position="389">
+              <caret line="407" column="23" selection-start-line="407" selection-start-column="23" selection-end-line="407" selection-end-column="23" />
               <folding>
                 <element signature="e#49#70#0" expanded="true" />
                 <element signature="e#4280#6551#0" />
@@ -76,12 +79,28 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/remake/test_file/usingPackGUI.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="579">
+              <caret line="147" selection-start-line="147" selection-end-line="147" />
+              <folding>
+                <element signature="e#49#70#0" expanded="true" />
+                <element signature="e#10307#12548#0" />
+                <element signature="e#12596#13272#0" />
+                <element signature="e#13312#13697#0" />
+                <element signature="e#13741#14715#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="559">
-                <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+              <first_editor relative-caret-position="526">
+                <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
               </first_editor>
               <second_editor />
             </state>
@@ -89,19 +108,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Program Files/Python35/Lib/tkinter/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="1998" selection-start-line="1998" selection-end-line="1998" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/remake/Database/analyzeReview.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="570">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -156,14 +166,17 @@
         <option value="$PROJECT_DIR$/remake/NaverAPI/papago.py" />
         <option value="$PROJECT_DIR$/remake/AmazonAPI/get_dentiment.py" />
         <option value="$PROJECT_DIR$/remake/Database/analyzeReview.py" />
+        <option value="$USER_HOME$/Desktop/Openkiosk/Alpha.py" />
         <option value="$PROJECT_DIR$/remake/imporve_GUI.py" />
+        <option value="$PROJECT_DIR$/remake/test_file/gui.py" />
+        <option value="$PROJECT_DIR$/remake/test_file/usingPackGUI.py" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="1289" />
+    <option name="width" value="1213" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -204,6 +217,12 @@
               <item name="remake" type="462c0819:PsiDirectoryNode" />
               <item name="NaverAPI" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="OpenKiosk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenKiosk" type="462c0819:PsiDirectoryNode" />
+              <item name="remake" type="462c0819:PsiDirectoryNode" />
+              <item name="test_file" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -230,29 +249,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.imporve_GUI">
-    <configuration name="Sync" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="OpenKiosk" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/remake/Database" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/remake/Database/Sync.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.usingPackGUI">
     <configuration name="analyzeReview" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OpenKiosk" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -297,6 +294,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="OpenKiosk" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/remake/test_file" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\User\Documents\GitHub\OpenKiosk\remake\test_file\usingPackGUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="imporve_GUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OpenKiosk" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -319,7 +338,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="versioncheck" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="usingPackGUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OpenKiosk" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -327,12 +346,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/remake/AmazonAPI" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/remake/test_file" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\User\Documents\GitHub\OpenKiosk\remake\AmazonAPI\get_dentiment.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/remake/test_file/usingPackGUI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -343,11 +362,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.usingPackGUI" />
         <item itemvalue="Python.imporve_GUI" />
+        <item itemvalue="Python.gui" />
         <item itemvalue="Python.analyzeReview" />
         <item itemvalue="Python.get_dentiment" />
-        <item itemvalue="Python.versioncheck" />
-        <item itemvalue="Python.Sync" />
       </list>
     </recent_temporary>
   </component>
@@ -368,18 +387,18 @@
       <workItem from="1555220733889" duration="5745000" />
       <workItem from="1555286726938" duration="1645000" />
       <workItem from="1555296598131" duration="6757000" />
-      <workItem from="1555390077928" duration="16777000" />
+      <workItem from="1555390077928" duration="25393000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53896000" />
+    <option name="totallyTimeSpent" value="62512000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1289" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="1213" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18307567" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1951431" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -478,10 +497,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Program Files/Python35/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="1998" selection-start-line="1998" selection-end-line="1998" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/remake/Database/analyzeReview.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="570">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
@@ -490,28 +516,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/remake/Database/Sync.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1767">
-          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/remake/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2503">
-          <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/Python35/Lib/tkinter/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="1998" selection-start-line="1998" selection-end-line="1998" />
+        <state relative-caret-position="532">
+          <caret line="64" column="34" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/Openkiosk/Alpha.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4275">
+        <state relative-caret-position="246">
+          <caret line="154" column="63" selection-start-line="154" selection-start-column="63" selection-end-line="154" selection-end-column="63" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -520,8 +533,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/remake/imporve_GUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="368" column="61" lean-forward="true" selection-start-line="368" selection-start-column="61" selection-end-line="368" selection-end-column="61" />
+        <state relative-caret-position="389">
+          <caret line="407" column="23" selection-start-line="407" selection-start-column="23" selection-end-line="407" selection-end-column="23" />
           <folding>
             <element signature="e#49#70#0" expanded="true" />
             <element signature="e#4280#6551#0" />
@@ -532,11 +545,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/remake/gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1116">
+          <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/remake/test_file/usingPackGUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
+          <folding>
+            <element signature="e#49#70#0" expanded="true" />
+            <element signature="e#10307#12548#0" />
+            <element signature="e#12596#13272#0" />
+            <element signature="e#13312#13697#0" />
+            <element signature="e#13741#14715#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="559">
-            <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+          <first_editor relative-caret-position="526">
+            <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
           </first_editor>
           <second_editor />
         </state>

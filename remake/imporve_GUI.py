@@ -36,8 +36,11 @@ class MainApplication(tkinter.Frame, threading.Thread):
         tkinter.Frame.__init__(self, parent, *args, **kwargs)
         self.parent = parent
         self.modeNum = 0
+        self.listNum = 0
         self.Lnum, self.Mnum, self.Rnum = 0, 0, 1
         self.menu_control = []
+        self.result_menu = []
+
         # ===============================================================================
         # 프레임 생성
         # ===============================================================================
@@ -53,9 +56,6 @@ class MainApplication(tkinter.Frame, threading.Thread):
         self.DownFrame = ttk.Frame(self.leftFrame)
         self.DownFrame.grid(column=0, row=1)
 
-        self.MidFrame = ttk.Frame(self.leftFrame)
-        self.MidFrame.grid(column=0, row=2)
-
         # ===============================================================================
         #   위젯 프레임
         # ===============================================================================
@@ -69,13 +69,17 @@ class MainApplication(tkinter.Frame, threading.Thread):
         self.right_widget.grid(column=2, row=0)
 
         # ===============================================================================
-        #   스크롤바 생성
+        #   리스트 박스 생성
         # ===============================================================================
+        """
         self.scr_w = 28
         self.scr_h = 24
         self.scr = scrolledtext.ScrolledText(self.RightFrame, width=self.scr_w, height=self.scr_h, wrap=tkinter.WORD)
         self.scr.grid(column=3,row=3)
-
+        # scrolledtext.scrolledText(self.mighty, width=self.scr_w, height=self.scr_h, wrap=tk.WORD)
+        """
+        self.listbox = tkinter.Listbox(self.RightFrame, width=28, height=18, relief='solid')
+        self.listbox.grid(column=3, row=3)
 
 
         # ===============================================================================
@@ -95,7 +99,6 @@ class MainApplication(tkinter.Frame, threading.Thread):
         # list(list[0].values) = 경로, list(list[0].keys()) = 이름
         # 그럼 list = [ImageTk.PhotoImage(resized_img(list(i.values())[0])) for i in KorImages]
         # ====> 레퍼런스를 유지한 이미지 객체 생성 완료료
-
 
         self.left_label = tkinter.Label(self.left_widget, image=self.images['china'])
         self.left_label.grid(column=0, row=0)
@@ -143,6 +146,14 @@ class MainApplication(tkinter.Frame, threading.Thread):
         self.User_button = tkinter.Button(self.DownFrame, text="카테고리 입력", command=lambda: self.make_subMain())
         self.User_button.grid(column=1, row=1)
 
+        self.BackBtn = tkinter.Button(self.DownFrame, text="  뒤로  ", command=lambda: self.back_event(), font=('', 12))
+        self.BackBtn.grid(column=0, row=1)
+
+        self.left_info.config(text="나는 오늘 살찌고싶다\n기름진 최강중식")
+        self.mid_info.config(text="정갈한 한식\n고향맛 한식")
+        self.right_info.config(text="난 비린맛따윈 모른다\n바다향 일식")
+
+
     # ===============================================================================
     #  버튼 이벤트
     # ===============================================================================
@@ -166,6 +177,24 @@ class MainApplication(tkinter.Frame, threading.Thread):
             self.Mnum = self.Rnum
             self.Rnum = self.Rnum + 1
 
+    def back_event(self):
+        if self.modeNum == 0:
+            pass
+        elif self.modeNum == 1:
+            self.modeNum = 0
+            self.Lnum, self.Mnum, self.Rnum = 0, 0, 1
+            self.menu_control.clear()
+            self.left_label.config(image=self.images['china'])
+            self.center_label.config(image=self.images['korea'])
+            self.right_label.config(image=self.images['japan'])
+            self.button.config(text="  한식  ", font=('', 15))
+            self.Lbtn.config(text="  중식  ", font=('', 15))
+            self.Rbtn.config(text="  일식  ", font=('', 15))
+            self.left_info.config(text="나는 오늘 살찌고싶다\n기름진 최강중식")
+            self.mid_info.config(text="정갈한 한식\n고향맛 한식")
+            self.right_info.config(text="난 비린맛따윈 모른다\n바다향 일식")
+        pass
+
     def set_image(self):
         self.left_label.config(image=self.menu_control[self.Lnum][-1])
         self.right_label.config(image=self.menu_control[self.Rnum][-1])
@@ -176,9 +205,9 @@ class MainApplication(tkinter.Frame, threading.Thread):
         self.right_info.config(text=str(self.menu_control[self.Rnum][1] + '\n' + str(self.menu_control[self.Rnum][3])))
 
     def btnTextSet(self):
-        self.Lbtn.config(text="<---")
-        self.button.config(text="선택")
-        self.Rbtn.config(text="--->")
+        self.Lbtn.config(text=" <---  ")
+        self.button.config(text="  선택  ")
+        self.Rbtn.config(text="  ---> ")
 
     def left_action(self):
         if self.modeNum == 0:
@@ -211,6 +240,10 @@ class MainApplication(tkinter.Frame, threading.Thread):
             self.btnTextSet()
             self.set_image()
             self.modeNum = 1
+        elif self.modeNum == 1:
+            self.result_menu[self.listNum] = self.menu_control[self.Mnum]
+            self.listbox.insert(self.listNum, )
+            self.listNum = self.listNum + 1
         pass
 
     # 유저 카테고리 윈도우
@@ -374,7 +407,7 @@ class Demo3:
 if __name__ == "__main__":
     root = tkinter.Tk()
     root.title("OpenKiosk")
-    root.geometry("850x320")
+    root.geometry("850x315")
     root.resizable(False, False)
     MainApplication(root).pack()
     root.mainloop()

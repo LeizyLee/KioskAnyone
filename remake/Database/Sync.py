@@ -94,6 +94,13 @@ class SyncCursor:
 
         return file_path
 
+    def temp(self):
+        self.cur.execute("SELECT * FROM menu.menulist")
+        record = self.cur.fetchall()
+        for i in record:
+            print(i[-2])
+        dic = {i[2]: i[-2] for i in record}
+        print(dic)
     def __del__(self):
         self.cur.close()
         self.conn.close()

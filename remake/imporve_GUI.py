@@ -87,9 +87,9 @@ class MainApplication(tkinter.Frame, threading.Thread):
         # ===============================================================================
         src = 'C:\\Users\\User\\Desktop\\image\\Kioskimg'.replace('\\', '/')
         self.images = {}
-        self.images['china'] = ImageTk.PhotoImage(resized_img('C:/Users/User/Desktop/image/Kioskimg/china.png'))
-        self.images['korea'] = ImageTk.PhotoImage(resized_img('C:/Users/User/Desktop/image/Kioskimg/korea.png'))
-        self.images['japan'] = ImageTk.PhotoImage(resized_img('C:/Users/User/Desktop/image/Kioskimg/japan.png'))
+        self.images['china'] = ImageTk.PhotoImage(resized_img('C:/res/china.png'))
+        self.images['korea'] = ImageTk.PhotoImage(resized_img('C:/res/korea.png'))
+        self.images['japan'] = ImageTk.PhotoImage(resized_img('C:/res/japan.png'))
         self.KorData = [[i[0], i[2], i[3], i[4], ImageTk.PhotoImage(resized_img(i[5]))] for i in data if i[1] == 'korea']
         self.JapData = [[i[0], i[2], i[3], i[4], ImageTk.PhotoImage(resized_img(i[5]))] for i in data if i[1] == 'japan']
         self.ChiData = [[i[0], i[2], i[3], i[4], ImageTk.PhotoImage(resized_img(i[5]))] for i in data if i[1] == 'china']

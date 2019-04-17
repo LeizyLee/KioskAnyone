@@ -24,8 +24,6 @@ python -m pip install --only-binary :all: mysqlclient
 - 기존에 1개의 메뉴만 고르는 프로그램에서 N개의 메뉴로 확장
 
 
-
-
 ## 2019-03-12
 - GUI 코드 다시 작성함
 - 다시 다 갈아엎음
@@ -41,5 +39,8 @@ python -m pip install --only-binary :all: mysqlclient
 - 이미지가 안나오던거 수정함
 - 왼쪽에 계산목록 나오게 수정중
 
-## 2019-04-17
+## 2019-04-17(오전)
 - ...아무래도 Tk에서 Qt로 바꿔야 할거같다...
+
+## 2019-04-17(오후)
+- Qt사용법 알아냄! 존나좋음!

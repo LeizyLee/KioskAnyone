@@ -44,3 +44,8 @@ python -m pip install --only-binary :all: mysqlclient
 
 ## 2019-04-17(오후)
 - Qt사용법 알아냄! 존나좋음!
+
+## 2019-04-18
+- UI 전환 성공
+- 음성인식부분까지 접목 완료
+- 내일 음성인식부분 화면 더 가꾸는걸로

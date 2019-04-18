@@ -42,7 +42,7 @@
        <enum>QFrame::Box</enum>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>LeftLabel</string>
       </property>
      </widget>
     </item>
@@ -59,7 +59,7 @@
        <enum>QFrame::Box</enum>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>MidLabel</string>
       </property>
      </widget>
     </item>
@@ -76,7 +76,7 @@
        <enum>QFrame::Box</enum>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>RightLabel</string>
       </property>
      </widget>
     </item>
@@ -117,7 +117,7 @@
        </font>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>ResultLabel</string>
       </property>
      </widget>
     </item>
@@ -137,12 +137,16 @@
      <widget class="QLabel" name="LeftInfo">
       <property name="font">
        <font>
+        <family>나눔고딕</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
         <stylestrategy>NoAntialias</stylestrategy>
         <kerning>false</kerning>
        </font>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>LeftInfo</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -153,12 +157,16 @@
      <widget class="QLabel" name="MidInfo">
       <property name="font">
        <font>
+        <family>나눔고딕</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
         <stylestrategy>NoAntialias</stylestrategy>
         <kerning>false</kerning>
        </font>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>MidInfo</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -169,12 +177,16 @@
      <widget class="QLabel" name="RightInfo">
       <property name="font">
        <font>
+        <family>나눔고딕</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
         <stylestrategy>NoAntialias</stylestrategy>
         <kerning>false</kerning>
        </font>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>RightInfo</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -204,7 +216,7 @@
       <x>0</x>
       <y>0</y>
       <width>731</width>
-      <height>72</height>
+      <height>71</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -212,12 +224,12 @@
       <widget class="QPushButton" name="LeftBtn">
        <property name="minimumSize">
         <size>
-         <width>120</width>
+         <width>0</width>
          <height>50</height>
         </size>
        </property>
        <property name="text">
-        <string>PushButton</string>
+        <string>LeftBtn</string>
        </property>
       </widget>
      </item>
@@ -225,7 +237,7 @@
       <widget class="QPushButton" name="MidBtn">
        <property name="minimumSize">
         <size>
-         <width>120</width>
+         <width>0</width>
          <height>50</height>
         </size>
        </property>
@@ -236,7 +248,7 @@
         </size>
        </property>
        <property name="text">
-        <string>PushButton</string>
+        <string>MidBtn</string>
        </property>
        <property name="iconSize">
         <size>
@@ -259,12 +271,12 @@
       <widget class="QPushButton" name="RightBtn">
        <property name="minimumSize">
         <size>
-         <width>120</width>
+         <width>0</width>
          <height>50</height>
         </size>
        </property>
        <property name="text">
-        <string>PushButton</string>
+        <string>RightBtn</string>
        </property>
       </widget>
      </item>
@@ -273,7 +285,7 @@
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>490</x>
       <y>150</y>
       <width>181</width>
       <height>31</height>
@@ -282,7 +294,7 @@
     <property name="font">
      <font>
       <family>Bodoni MT</family>
-      <pointsize>12</pointsize>
+      <pointsize>15</pointsize>
       <weight>50</weight>
       <italic>true</italic>
       <bold>false</bold>
@@ -308,7 +320,7 @@
     <property name="font">
      <font>
       <family>Bodoni MT</family>
-      <pointsize>10</pointsize>
+      <pointsize>14</pointsize>
       <italic>true</italic>
      </font>
     </property>
@@ -322,7 +334,7 @@
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
-      <x>620</x>
+      <x>590</x>
       <y>170</y>
       <width>21</width>
       <height>16</height>
@@ -331,7 +343,7 @@
     <property name="font">
      <font>
       <family>Bodoni MT</family>
-      <pointsize>10</pointsize>
+      <pointsize>14</pointsize>
       <italic>true</italic>
      </font>
     </property>
@@ -343,7 +355,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>80</y>
+      <y>70</y>
       <width>731</width>
       <height>80</height>
      </rect>
@@ -353,7 +365,7 @@
       <widget class="QPushButton" name="BackBtn">
        <property name="minimumSize">
         <size>
-         <width>120</width>
+         <width>0</width>
          <height>50</height>
         </size>
        </property>
@@ -363,15 +375,15 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="CatBtn">
        <property name="minimumSize">
         <size>
-         <width>120</width>
+         <width>0</width>
          <height>50</height>
         </size>
        </property>
        <property name="text">
-        <string>PushButton</string>
+        <string>CatBtn</string>
        </property>
       </widget>
      </item>
@@ -385,6 +397,64 @@
     </layout>
    </widget>
   </widget>
+  <widget class="QLabel" name="Background">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>600</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>489</y>
+     <width>190</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Background_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>600</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>Background_2</zorder>
+  <zorder>horizontalLayoutWidget</zorder>
+  <zorder>verticalLayoutWidget</zorder>
+  <zorder>horizontalLayoutWidget_2</zorder>
+  <zorder>frame</zorder>
+  <zorder>Background</zorder>
+  <zorder>pushButton</zorder>
  </widget>
  <resources/>
  <connections/>

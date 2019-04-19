@@ -1,14 +1,33 @@
 class SyncCursor:
-    def __init__(self, _host, _db, _user, _password):
-        import pymysql
-        import os
+    def __init__(self, _host='202.31.147.28', _user='admin', _password='qwe123!!@@', _db='menu', _charset='utf8'):
+        try:
+            import pymysql
 
-        # id_num(INT), image(LONG BLOB), image_name(VARCHAR 45), dir(VARCHAR 80)
-        self.conn = pymysql.connect(host=_host, db=_db, charset='utf8', user=_user, password=_password)
-        self.cur = self.conn.cursor()
-        self.getDB = _db
-        self.getHost = _host
-        self.getUser = _user
+            self.conn = pymysql.connect(host=_host, user=_user, password=_password, db=_db, charset=_charset)
+            self.cur = self.conn.cursor()
+            sql = "select * from menu.menulist"
+            self.cur.execute(sql)
+            self.table_list = list(self.cur.fetchall())
+        except ImportError as e:
+            print(e)
+            exit()
+
+    def show_table(self):
+        print(self.table_list)
+
+    def get_item(self, _key):
+        tmp_list = []
+        for i in self.table_list:
+            if _key in i[1]:
+                tmp_list.append(i[2:])
+        return tmp_list
+
+    def get_cat(self):
+        tmp = []
+        for i in self.table_list:
+            if not i[1][3:] in tmp:
+                tmp.append(i[1][3:])
+        return tmp
 
     def ImageConvertToBinaryData(self, file_src):
         with open(file_src, 'rb') as file:
@@ -45,18 +64,23 @@ class SyncCursor:
 
     def deploy_image(self):
         print("Checking res Directory exist\n")
-        if not os.path.isdir("C:/res"):
+        import os
+
+        if not os.path.isdir("./res"):
             print("Can't find res Directory...\nprocessing make res")
-            os.mkdir('C:/res')
-            os.mkdir('C:/res/korea')
-            os.mkdir('C:/res/china')
-            os.mkdir('C:/res/japan')
-        elif not os.path.isdir('C:/res/korea') or not os.path.isdir('C:/res/china') or not os.path.isdir('C:/res/japan'):
-            os.mkdir('C:/res/korea')
-            os.mkdir('C:/res/china')
-            os.mkdir('C:/res/japan')
+            os.mkdir('./res')
+            os.mkdir('./res/korea')
+            os.mkdir('./res/china')
+            os.mkdir('./res/japan')
+            os.mkdir('./res/userCat')
+        elif not os.path.isdir('./res/korea') or not os.path.isdir('./res/china') or not os.path.isdir('./res/japan'):
+            os.mkdir('./res/UserCat')
+            os.mkdir('./res/korea')
+            os.mkdir('./res/china')
+            os.mkdir('./res/japan')
         else:
-            print("already exist")
+            print("Exist")
+            return True
         print("Next step....\n")
         self.cur.execute("SELECT * FROM menu.menulist")
 
@@ -101,9 +125,27 @@ class SyncCursor:
             print(i[-2])
         dic = {i[2]: i[-2] for i in record}
         print(dic)
-    def __del__(self):
-        self.cur.close()
-        self.conn.close()
+
+    def sendSalesData(self, result):
+        import datetime
+
+        self.cur.execute("SELECT * FROM menu.salesstatics")
+        row = self.cur.rowcount
+        """
+        sql_insert_blob_query = "INSERT INTO menu.menulist VALUES (%s, %s, %s, %s, %s, %s, %s)"
+
+        image = self.ImageConvertToBinaryData(img_src)
+
+        insert_blob_tuple = (1, image, img_src.split('/')[-1], img_src)
+        print(insert_blob_tuple)
+        result = self.cur.execute(sql_insert_blob_query, insert_blob_tuple)        
+        """
+        sql_insert_qurey = "INSERT INTO menu.salesstatics VALUES (%s, %s, %s, %s, %s)"
+        for i in result:
+            row = row + 1
+            self.cur.execute(sql_insert_qurey, (str(row), str(i[0]), str(i[1]), str(i[2]), str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))))
+        self.conn.commit()
+
 
 if __name__ == "__main__":
     import os
@@ -111,11 +153,10 @@ if __name__ == "__main__":
     src = 'C:/Users/User/Desktop/image'
     #dir = os.listdir('C:/Users/User/Desktop/image')
     #item = [src+'/'+i for i in dir if '.jpg' in i or '.png' in i] #'C:/Users/User/Desktop/image/doge.png'
-    dbsync = SyncCursor('202.31.147.28', 'menu', 'admin', 'qwe123!!@@')
+    dbsync = SyncCursor()
     #dbsync.insert_PickImage(1, '참치찌개', '밥, 기름, 국, 매운, 찌개', 4000)
     #dbsync.getting_image('C:/res/')
     #print(dbsync.get_dir())
-    dbsync.deploy_image()
     """
     print(os.path.isdir(src+'/Kioskimg'))
     print(os.getcwd().replace('\\','/'))

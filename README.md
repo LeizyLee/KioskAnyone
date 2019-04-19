@@ -49,3 +49,7 @@ python -m pip install --only-binary :all: mysqlclient
 - UI 전환 성공
 - 음성인식부분까지 접목 완료
 - 내일 음성인식부분 화면 더 가꾸는걸로
+
+## 2019-04-19
+- 기능 구현은 끝
+- 근데 왜 exe 파일로는 실행이 안될까

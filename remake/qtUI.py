@@ -1,30 +1,30 @@
 import sys
+import remake.UI
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-from PyQt5 import uic
-from PyQt5 import QtCore
-import time
-
-from remake import DB
+from remake.Database import Sync
 import threading
 
 #form_class = uic.loadUiType("../qtDesigner/v2.ui")[0]
-Ui_MainWindow = uic.loadUiType("../qtDesigner/v3.ui")[0]
 
-db = DB.DBlist()
+db = Sync.SyncCursor()
+if db.deploy_image():
+    pass
 data = db.table_list
-menuData = [i[1:] for i in data]
-src = [i[-2] for i in menuData]
-src = [i.replace('\\', '/') for i in src]
+menuData = [i[1:] for i in data if not i[3] == None]
+
 for i in menuData:
     print(i[:-1])
-class MyWindow(QMainWindow, Ui_MainWindow, threading.Thread):
+class MyWindow(QMainWindow, remake.UI.Ui_Openkiosk, threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
         self.daemon = True
         self.start()
         super().__init__()
-
+        
+        # ===============================================================================================
+        #               메인 윈도우에 사용될 변수
+        # ===============================================================================================
         self.setupUi(self)
         self.mighty.hide()
         self.CatBtn.clicked.connect(lambda : self.clicked_userCat())
@@ -37,9 +37,9 @@ class MyWindow(QMainWindow, Ui_MainWindow, threading.Thread):
         )
         self.pushButton.clicked.connect(lambda : self.firstClicked())
 
-        self.KorMain = self.showImage('C:/res/korea.png')
-        self.JapMain = self.showImage('C:/res/japan.png')
-        self.ChiMain = self.showImage('C:/res/china.png')
+        self.KorMain = self.showImage('./res/korea.png')
+        self.JapMain = self.showImage('./res/japan.png')
+        self.ChiMain = self.showImage('./res/china.png')
 
         self.LeftLabel.setPixmap(self.ChiMain)
         self.MidLabel.setPixmap(self.KorMain)
@@ -49,69 +49,50 @@ class MyWindow(QMainWindow, Ui_MainWindow, threading.Thread):
         self.MidInfo.setText("한국")
         self.RightInfo.setText("일본")
 
+        self.modeNum = 0
+        self.listNum = 0
+        self.money = 0
+        self.Lnum, self.Mnum, self.Rnum = 0, 0, 1
+        self.menu_control = []
+
+        self.LeftBtn.clicked.connect(lambda: self.left_action())
+        self.MidBtn.clicked.connect(lambda: self.center_action())
+        self.RightBtn.clicked.connect(lambda: self.right_action())
+        self.BackBtn.clicked.connect(lambda: self.back_event())
+        self.VoiceBtn.clicked.connect(lambda: self.Using_GCS())
+        self.FinalBtn.clicked.connect(lambda : self.finalbutton())
+        
         self.KorData = [[i[0], i[2], i[3], i[4], self.showImage(i[5])] for i in data if i[1] == 'korea']
         self.JapData = [[i[0], i[2], i[3], i[4], self.showImage(i[5])] for i in data if i[1] == 'japan']
         self.ChiData = [[i[0], i[2], i[3], i[4], self.showImage(i[5])] for i in data if i[1] == 'china']
-        self.checklist = ['밥', '면', '국', '튀김', '매운', '고기', '뜨거운', '기름']
 
+        self.ItemModel = QStandardItemModel()
+        self.ItemList.setModel(self.ItemModel)
 
-        self.modeNum = 0
-        self.listNum = 0
-        self.Lnum, self.Mnum, self.Rnum = 0, 0, 1
-        self.menu_control = []
+        # ===============================================================================================
+        #               서브 윈도우에 사용될 변수
+        # ===============================================================================================
+        self.CompleteBtn.clicked.connect(lambda: self.CheckBtnClicked())
+        self.UserCatImagebox = [self.RiceImage, self.NoodleImage, self.MeetImage, self.SoupImage, self.SpicyImage,
+                                self.FriedImage, self.OilImage, self.HotImage]
+        self.UserCatCheckBox = [self.RiceBtn, self.NoodleBtn, self.MeetBtn, self.SoupBtn, self.SpicyBtn, self.FriedBtn,
+                                self.OilBtn, self.HotBtn]
+        self.checklist = ['밥', '면', '고기', '국', '매운', '튀김', '기름', '뜨거운']
+        self.subMode = 0
+        self.subResult = []
+
+        #image.setPixmap(QPixmap(dir))
+        #화면 초기화
+        for i in range(0,len(self.UserCatImagebox)):
+            self.UserCatImagebox[i].setPixmap(QPixmap('./res/userCat/'+str(i+1)+'.jpg').scaled(200,200))
+            self.UserCatCheckBox[i].setText(self.checklist[i])
+        
         self.result_menu = []
+        self.BackBtn_2.clicked.connect(lambda : self.subBackClicked())
 
-        self.LeftBtn.clicked.connect(lambda : self.left_action())
-        self.MidBtn.clicked.connect(lambda : self.center_action())
-        self.RightBtn.clicked.connect(lambda : self.right_action())
-        self.BackBtn.clicked.connect(lambda : self.back_event())
-        self.VoiceBtn.clicked.connect(lambda : self.Using_GCS())
-
-    def Using_GCS(self):
-        userData = [i[2:3] for i in menuData]
-        sData = [i[0] for i in userData]
-        result = []
-
-        from remake.GoogleCloud import googleCloudSpeech, sound_recorder
-
-        getUserOpinion = sound_recorder.getWaveFile()
-        getUserOpinion.run()
-        tmp = googleCloudSpeech.run_quickstart()
-        text = self.find_tag(tmp)
-        if text == []:
-            print("원하는 결과가 없습니다.")
-        else:
-            print(text)
-            for i in range(0, len(menuData)):
-                check = 0
-                for j in text:
-                    if j in sData[i]:
-                        check = check + 1
-                if check == len(text):
-                    result.append(menuData[i])
-            print("====================== 결과 =========================")
-            print(result)
-            try:
-                print(result)
-            except IndexError as e:
-                print("일치하는 결과가 없습니다~")
-
-    def find_tag(self, text):
-        result = []
-        if '밥' in text:
-            result.append('밥')
-        if '면' in text:
-            result.append('면')
-        if '국' in text:
-            result.append('국')
-        if '튀김' in text:
-            result.append('튀김')
-        if '고기' in text:
-            result.append('고기')
-        if '매운' in text or '맵고' in text:
-            result.append('매운')
-        return result
-
+    # ===============================================================================================
+    #               메인 윈도우에 사용되는 버튼 클릭 이벤트
+    # ===============================================================================================
     def firstClicked(self):
         self.pushButton.hide()
         self.Background.hide()
@@ -182,8 +163,12 @@ class MyWindow(QMainWindow, Ui_MainWindow, threading.Thread):
             self.set_image()
             self.modeNum = 1
         elif self.modeNum == 1:
-            self.result_menu.append(self.menu_control[self.Mnum])
+            self.result_menu.append([self.menu_control[self.Mnum][0], self.menu_control[self.Mnum][1], self.menu_control[self.Mnum][-2]])
+            self.ItemModel.appendRow(QStandardItem(self.result_menu[self.listNum][1] + ' ' + str(self.result_menu[self.listNum][-1]) + '원'))
+            self.money = self.money + self.result_menu[self.listNum][-1]
             self.listNum = self.listNum + 1
+            print(self.result_menu)
+            self.ResultLabel.setText('총액 : ' + str(self.money) + ' 원')
         pass
 
     def back_event(self):
@@ -202,6 +187,9 @@ class MyWindow(QMainWindow, Ui_MainWindow, threading.Thread):
             self.LeftInfo.setText("중국")
             self.MidInfo.setText("한국")
             self.RightInfo.setText("일본")
+            self.ItemModel.clear()
+            self.money = 0
+            self.ResultLabel.setText("메뉴를 골라주세요")
         pass
 
     def showImage(self, dir):
@@ -212,50 +200,85 @@ class MyWindow(QMainWindow, Ui_MainWindow, threading.Thread):
         except ValueError as e:
             print("경로를 잘못입력함")
 
+    def finalbutton(self):
+        db.sendSalesData(self.result_menu)
+        self.back_event()
+
     def clicked_userCat(self):
-        self.Rmain.hide()
-        self.mighty.show()
-        self.progressBar.hide()
-        self.CompleteBtn.clicked.connect(lambda : self.CheckBtnClicked())
-        self.UserCatImagebox = [self.RiceImage, self.NoodleImage, self.MeetImage, self.SoupImage, self.SpicyImage,
-                                self.FriedImage, self.OilImage, self.HotImage]
-        self.UserCatCheckBox = [self.RiceBtn, self.NoodleBtn, self.MeetBtn, self.SoupBtn, self.SpicyBtn, self.FriedBtn,
-                                self.OilBtn, self.HotBtn]
+        self.modeNum = 2
+        self.FinalBtn.setText("정말 다 골랐나요?")
+        if self.modeNum == 2:
+            self.Rmain.hide()
+            self.mighty.show()
+            self.progressBar.hide()
 
-
+    # ===============================================================================================
+    #               서브 윈도우에 사용되는 버튼 클릭 이벤트
+    # ===============================================================================================
+    def subBackClicked(self):
+        self.mighty.hide()
+        self.Rmain.show()
+        # 화면 초기화
+        for i in range(0, len(self.UserCatImagebox)):
+            self.UserCatImagebox[i].setPixmap(QPixmap('./res/userCat/' + str(i + 1) + '.jpg').scaled(200, 200))
+            self.UserCatCheckBox[i].setText(self.checklist[i])
+            self.UserCatCheckBox[i].setChecked(False)
+        self.subMode = 0
 
     def CheckBtnClicked(self):
-        tmp = []
-        result = []
-        if self.RiceBtn.isChecked() == True:
-            tmp.append('밥')
-        if self.NoodleBtn.isChecked() == True:
-            tmp.append('면')
-        if self.SoupBtn.isChecked() == True:
-            tmp.append('국')
-        if self.SpicyBtn.isChecked() == True:
-            tmp.append('매운')
-        if self.HotBtn.isChecked() == True:
-            tmp.append('뜨거운')
-        if self.FriedBtn.isChecked() == True:
-            tmp.append('튀김')
-        if self.MeetBtn.isChecked() == True:
-            tmp.append('고기')
-        if self.OilBtn.isChecked() == True:
-            tmp.append('기름')
-        for i in menuData:
+        if not self.subMode == 1:
+            self.subMode = 1
+            tmp = []
+            if self.RiceBtn.isChecked() == True:
+                tmp.append('밥')
+            if self.NoodleBtn.isChecked() == True:
+                tmp.append('면')
+            if self.SoupBtn.isChecked() == True:
+                tmp.append('국')
+            if self.SpicyBtn.isChecked() == True:
+                tmp.append('매운')
+            if self.HotBtn.isChecked() == True:
+                tmp.append('뜨거운')
+            if self.FriedBtn.isChecked() == True:
+                tmp.append('튀김')
+            if self.MeetBtn.isChecked() == True:
+                tmp.append('고기')
+            if self.OilBtn.isChecked() == True:
+                tmp.append('기름')
+            self.find_menu(tmp)
+        elif self.subMode == 1:
+            for i in range(0, len(self.UserCatCheckBox)):
+                if self.UserCatCheckBox[i].isChecked() == True:
+                    self.result_menu.append(self.subResult[i][:-1])
+                    self.ItemModel.appendRow(
+                    QStandardItem(self.result_menu[self.listNum][1] + ' ' + str(self.result_menu[self.listNum][-1]) + '원'))
+                    self.money = self.money + self.result_menu[self.listNum][-1]
+                    self.listNum = self.listNum + 1
+            self.ResultLabel.setText('총액 : ' + str(self.money) + ' 원')
+            self.subBackClicked()
+
+
+    def find_menu(self,tmp):
+        #self.KorData = [[i[0], i[2], i[3], i[4], self.showImage(i[5])] for i in data if i[1] == 'korea']
+        # 번호, 이름, 속성, 가격, 이미지태그
+        for i in data:
             check = 0
-            for j in i[2].split(","):
-                if j in tmp:
-                    check = check + 1
-            if check == len(tmp):
-                result.append(i[:-1])
+            if i[3] == None:
+                pass
+            else:
+                for j in i[3].split(","):
+                    if j in tmp:
+                        check = check + 1
+                if check == len(tmp):
+                    self.subResult.append([i[0],i[2],i[4],i[-2]])
         print(tmp)
-        print(result)
+        print(self.subResult)
+
+
         check = 0
         for i in self.UserCatImagebox:
-            if check < len(result):
-                i.setPixmap(self.resultImage(result[check][-1]))
+            if check < len(self.subResult):
+                i.setPixmap(self.resultImage(self.subResult[check][-1]))
                 check = check+1
             else:
                 i.setText("No image")
@@ -263,11 +286,14 @@ class MyWindow(QMainWindow, Ui_MainWindow, threading.Thread):
         check = 0
         for i in self.UserCatCheckBox:
             i.setChecked(False)
-            if check < len(result):
-                i.setText(str(result[check][1] + " " + str(result[check][3])+"원"))
+            if check < len(self.subResult):
+                i.setText(str(self.subResult[check][1] + " " + str(self.subResult[check][2])+"원"))
                 check = check + 1
             else:
                 i.setText("")
+        self.CompleteBtn.setText("메뉴 고르기가 완료되면\n눌러주세요")
+
+
     def resultImage(self, dir):
         try:
             pixmap = QPixmap(dir)
@@ -276,7 +302,40 @@ class MyWindow(QMainWindow, Ui_MainWindow, threading.Thread):
         except ValueError as e:
             print("경로를 잘못입력함")
 
+    def Using_GCS(self):
+        from remake.GoogleCloud import googleCloudSpeech, sound_recorder
 
+        getUserOpinion = sound_recorder.getWaveFile()
+        getUserOpinion.run()
+        tmp = googleCloudSpeech.run_quickstart()
+        text = self.find_tag(tmp)
+        if text == []:
+            print("원하는 결과가 없습니다.")
+        else:
+            self.find_menu(text)
+        self.subMode = 1
+
+
+
+    def find_tag(self, text):
+        result = []
+        if '밥' in text:
+            result.append('밥')
+        if '면' in text:
+            result.append('면')
+        if '국' in text:
+            result.append('국')
+        if '튀김' in text:
+            result.append('튀김')
+        if '고기' in text:
+            result.append('고기')
+        if '매운' in text or '맵고' in text:
+            result.append('매운')
+        if '뜨겁고' in text or '뜨거' in text:
+            result.append('뜨거운')
+        if '기름' in text:
+            result.append('기름')
+        return result
 
 
 if __name__ == "__main__":

@@ -5,16 +5,12 @@ from PyQt5.QtGui import *
 from remake.Database import Sync
 import threading
 
-#form_class = uic.loadUiType("../qtDesigner/v2.ui")[0]
-
 db = Sync.SyncCursor()
 if db.deploy_image():
     pass
 data = db.table_list
 menuData = [i[1:] for i in data if not i[3] == None]
 
-for i in menuData:
-    print(i[:-1])
 class MyWindow(QMainWindow, remake.UI.Ui_Openkiosk, threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
@@ -167,7 +163,6 @@ class MyWindow(QMainWindow, remake.UI.Ui_Openkiosk, threading.Thread):
             self.ItemModel.appendRow(QStandardItem(self.result_menu[self.listNum][1] + ' ' + str(self.result_menu[self.listNum][-1]) + '원'))
             self.money = self.money + self.result_menu[self.listNum][-1]
             self.listNum = self.listNum + 1
-            print(self.result_menu)
             self.ResultLabel.setText('총액 : ' + str(self.money) + ' 원')
         pass
 
@@ -271,9 +266,6 @@ class MyWindow(QMainWindow, remake.UI.Ui_Openkiosk, threading.Thread):
                         check = check + 1
                 if check == len(tmp):
                     self.subResult.append([i[0],i[2],i[4],i[-2]])
-        print(tmp)
-        print(self.subResult)
-
 
         check = 0
         for i in self.UserCatImagebox:
@@ -313,7 +305,7 @@ class MyWindow(QMainWindow, remake.UI.Ui_Openkiosk, threading.Thread):
             print("원하는 결과가 없습니다.")
         else:
             self.find_menu(text)
-        self.subMode = 1
+            self.subMode = 1
 
 
 

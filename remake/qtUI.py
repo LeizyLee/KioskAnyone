@@ -182,6 +182,19 @@ class MyWindow(QMainWindow, remake.UI.Ui_Openkiosk, threading.Thread):
             self.LeftInfo.setText("중국")
             self.MidInfo.setText("한국")
             self.RightInfo.setText("일본")
+        elif self.modeNum == 2:
+            self.modeNum = 0
+            self.Lnum, self.Mnum, self.Rnum = 0, 0, 1
+            self.menu_control.clear()
+            self.LeftLabel.setPixmap(self.ChiMain)
+            self.MidLabel.setPixmap(self.KorMain)
+            self.RightLabel.setPixmap(self.JapMain)
+            self.LeftBtn.setText("중식")
+            self.MidBtn.setText("한식")
+            self.RightBtn.setText("일식")
+            self.LeftInfo.setText("중국")
+            self.MidInfo.setText("한국")
+            self.RightInfo.setText("일본")
             self.ItemModel.clear()
             self.money = 0
             self.ResultLabel.setText("메뉴를 골라주세요")
@@ -196,16 +209,32 @@ class MyWindow(QMainWindow, remake.UI.Ui_Openkiosk, threading.Thread):
             print("경로를 잘못입력함")
 
     def finalbutton(self):
-        db.sendSalesData(self.result_menu)
-        self.back_event()
+        if not self.modeNum == 2:
+            self.modeNum = 2
+            self.FinalBtn.setText("정말 다 골랐나요?")
+        elif self.modeNum == 2:
+            db.sendSalesData(self.result_menu)
+            self.ItemModel.clear()
+            self.money = 0
+            self.modeNum = 0
+            self.Lnum, self.Mnum, self.Rnum = 0, 0, 1
+            self.menu_control.clear()
+            self.LeftLabel.setPixmap(self.ChiMain)
+            self.MidLabel.setPixmap(self.KorMain)
+            self.RightLabel.setPixmap(self.JapMain)
+            self.LeftBtn.setText("중식")
+            self.MidBtn.setText("한식")
+            self.RightBtn.setText("일식")
+            self.LeftInfo.setText("중국")
+            self.MidInfo.setText("한국")
+            self.RightInfo.setText("일본")
+            self.ResultLabel.setText("메뉴를 골라주세요")
+            self.FinalBtn.setText("최종결정")
 
     def clicked_userCat(self):
-        self.modeNum = 2
-        self.FinalBtn.setText("정말 다 골랐나요?")
-        if self.modeNum == 2:
-            self.Rmain.hide()
-            self.mighty.show()
-            self.progressBar.hide()
+        self.Rmain.hide()
+        self.mighty.show()
+        self.progressBar.hide()
 
     # ===============================================================================================
     #               서브 윈도우에 사용되는 버튼 클릭 이벤트

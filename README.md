@@ -6,6 +6,8 @@ python3 -m pip install --upgrade pip
   
 Django에서 mysql.h가 없을 때 mysqlclient 설치 방법  
 python -m pip install --only-binary :all: mysqlclient  
+
+remake 폴더에 qt를 이용한 새로운 소스가 있음
   
 * 사용한 모듈
   * tkinter

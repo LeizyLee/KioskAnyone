@@ -9,9 +9,14 @@ python -m pip install --only-binary :all: mysqlclient
 
 remake 폴더에 qt를 이용한 새로운 소스가 있음
   
-* 사용한 모듈
-  * tkinter
-  * pymysql
+# 사용한 모듈
+ - pyqt5(remake project)
+ - tkinter(previous project)
+ - pymysql
+ - Pyaudio
+ - GoogleAPI _ gcloud_speech_to_text
+ - AmazonAPI _ Comprehend
+ - NaverAPI _ Papago
   
   
   

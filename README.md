@@ -56,7 +56,7 @@ python3 -m pip install --upgrade pip
     ![07](./readmeImg/run05.gif)
     + 메뉴 추천 기능
         - 소비자가 음식을 고민하는 부분을 해결하기 좋아하는 취향을 골라 메뉴를 추천해주는 시스템을 구성함(음성인식 추가)
-        [![Video Label](http://img.youtube.com/vi/watch?v=p56pmwAUSjA/0.jpg)](https://youtu.be/uwatch?v=p56pmwAUSjA)
+        <iframe width="640" height="360" src="https://www.youtube.com/watch?v=p56pmwAUSjA" frameborder="0" gesture="media" allowfullscreen=""></iframe>
 + 최종 확인
     1. 최종결정 이후 한번 더 클릭을 하시면 리스트가 초기화되면서 해당 항목은 DB에 매상테이블에 기록이 됩니다.
     ![08](./readmeImg/run06.gif)

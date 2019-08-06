@@ -189,6 +189,7 @@ class MyWindow(QMainWindow, UI.Ui_Openkiosk, threading.Thread):
                 self.menu_control.clear()
                 self.result_menu.clear()
                 self.BackBtn.setText("뒤로")
+                self.FinalBtn.setText("최종결정")
                 self.Lwinaowpfk += 1
             else:
                 self.BackBtn.setText("초기화")
@@ -220,6 +221,7 @@ class MyWindow(QMainWindow, UI.Ui_Openkiosk, threading.Thread):
             self.LeftInfo.setText("중국")
             self.MidInfo.setText("한국")
             self.RightInfo.setText("일본")
+            self.FinalBtn.setText("최종결정")
             self.Lnum, self.Mnum, self.Rnum = 0, 0, 1
             self.modeNum = 0
     def showImage(self, dir):

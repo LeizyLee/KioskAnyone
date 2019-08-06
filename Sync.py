@@ -1,5 +1,5 @@
 class SyncCursor:
-    def __init__(self, _host='202.31.147.28', _user='admin', _password='qwe123!!@@', _db='menu', _charset='utf8'):
+    def __init__(self, _host='192.168.25.4', _user='master', _password='qwe123!!@@', _db='menu', _charset='utf8'):
         try:
             import pymysql
 
@@ -38,29 +38,6 @@ class SyncCursor:
         # Convert binary data to proper format and write it on Hard Disk
         with open(filename, 'wb') as file:
             file.write(data)
-
-    def insert_data(self, img_src):
-        sql_insert_blob_query = "INSERT INTO menu.menulist VALUES (%s, %s, %s, %s, %s, %s, %s)"
-
-        image = self.ImageConvertToBinaryData(img_src)
-
-        insert_blob_tuple = (1, image, img_src.split('/')[-1], img_src)
-        print(insert_blob_tuple)
-        result = self.cur.execute(sql_insert_blob_query, insert_blob_tuple)
-        self.conn.commit()
-
-    def insert_PickImage(self, _flag, _name, _property, _price):
-        dir = self.get_dir()
-
-        self.cur.execute("SELECT * FROM menu.menulist WHERE local='korea'")
-        id_num = self.cur.fetchall()
-        print(id_num)
-        country = 'korea' if _flag == 1 else ('china' if _flag == 2 else 'japan')
-        #sql_insert_blob_query = "INSERT INTO menu.menulist VALUES (%s, %s, %s, %s, %s, %s, %s)"
-
-        #image = self.ImageConvertToBinaryData(dir)
-
-        insert_blob_tuple = ()
 
     def deploy_image(self):
         print("Checking res Directory exist\n")
@@ -118,55 +95,13 @@ class SyncCursor:
 
         return file_path
 
-    def temp(self):
-        self.cur.execute("SELECT * FROM menu.menulist")
-        record = self.cur.fetchall()
-        for i in record:
-            print(i[-2])
-        dic = {i[2]: i[-2] for i in record}
-        print(dic)
-
     def sendSalesData(self, result):
         import datetime
 
         self.cur.execute("SELECT * FROM menu.salesstatics")
         row = self.cur.rowcount
-        """
-        sql_insert_blob_query = "INSERT INTO menu.menulist VALUES (%s, %s, %s, %s, %s, %s, %s)"
-
-        image = self.ImageConvertToBinaryData(img_src)
-
-        insert_blob_tuple = (1, image, img_src.split('/')[-1], img_src)
-        print(insert_blob_tuple)
-        result = self.cur.execute(sql_insert_blob_query, insert_blob_tuple)        
-        """
         sql_insert_qurey = "INSERT INTO menu.salesstatics VALUES (%s, %s, %s, %s, %s)"
         for i in result:
             row = row + 1
             self.cur.execute(sql_insert_qurey, (str(row), str(i[0]), str(i[1]), str(i[2]), str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))))
         self.conn.commit()
-
-
-if __name__ == "__main__":
-    import os
-
-    src = 'C:/Users/User/Desktop/image'
-    #dir = os.listdir('C:/Users/User/Desktop/image')
-    #item = [src+'/'+i for i in dir if '.jpg' in i or '.png' in i] #'C:/Users/User/Desktop/image/doge.png'
-    dbsync = SyncCursor()
-    #dbsync.insert_PickImage(1, '참치찌개', '밥, 기름, 국, 매운, 찌개', 4000)
-    #dbsync.getting_image('C:/res/')
-    #print(dbsync.get_dir())
-    """
-    print(os.path.isdir(src+'/Kioskimg'))
-    print(os.getcwd().replace('\\','/'))
-
-    if not os.path.isdir(os.getcwd().replace('\\','/') + '/res'):
-        print("없음")
-        os.mkdir(os.getcwd().replace('\\','/') + '/res')
-        print("글서 만듬")
-    else:
-        print("있음")
-    dbsync.getting_image()
-    """
-

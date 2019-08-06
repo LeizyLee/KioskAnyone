@@ -1,5 +1,3 @@
-# https://gist.github.com/mabdrabo/8678538
-
 class getWaveFile:
     def __init__(self):
         import pyaudio

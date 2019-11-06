@@ -1,5 +1,5 @@
 class SyncCursor:
-    def __init__(self, _host='192.168.25.4', _user='master', _password='qwe123!!@@', _db='menu', _charset='utf8'):
+    def __init__(self, _host='localhost', _user='root', _password='qwe123!!@@', _db='menu', _charset='utf8'):
         try:
             import pymysql
 
@@ -102,6 +102,6 @@ class SyncCursor:
         row = self.cur.rowcount
         sql_insert_qurey = "INSERT INTO menu.salesstatics VALUES (%s, %s, %s, %s, %s)"
         for i in result:
-            row = row + 1
             self.cur.execute(sql_insert_qurey, (str(row), str(i[0]), str(i[1]), str(i[2]), str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))))
+            row = row + 1
         self.conn.commit()

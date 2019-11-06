@@ -11,12 +11,18 @@ if db.deploy_image():
     pass
 data = db.table_list
 menuData = [i[1:] for i in data if not i[3] == None]
+for i in menuData:
+    print(i[:-1])
 
-class MyWindow(QMainWindow, UI.Ui_Openkiosk, threading.Thread):
+print('\n\n')
+
+for i in data:
+    print(i[:-1])
+
+class MyWindow(QMainWindow, UI.Ui_Openkiosk):
     def __init__(self):
-        threading.Thread.__init__(self)
         self.daemon = True
-        self.start()
+
         super().__init__()
 
         # ===============================================================================================
@@ -62,9 +68,9 @@ class MyWindow(QMainWindow, UI.Ui_Openkiosk, threading.Thread):
         self.VoiceBtn.clicked.connect(lambda: self.Using_GCS())
         self.FinalBtn.clicked.connect(lambda: self.finalbutton())
 
-        self.KorData = [[i[0], i[2], i[3], i[4], self.showImage(i[5])] for i in data if i[1] == 'korea']
-        self.JapData = [[i[0], i[2], i[3], i[4], self.showImage(i[5])] for i in data if i[1] == 'japan']
-        self.ChiData = [[i[0], i[2], i[3], i[4], self.showImage(i[5])] for i in data if i[1] == 'china']
+        self.KorData = [[i[0], i[2], i[3], i[4], self.showImage(i[5])] for i in data if i[1] == '한국']
+        self.JapData = [[i[0], i[2], i[3], i[4], self.showImage(i[5])] for i in data if i[1] == '일본']
+        self.ChiData = [[i[0], i[2], i[3], i[4], self.showImage(i[5])] for i in data if i[1] == '중국']
 
         self.ItemModel = QStandardItemModel()
         self.ItemList.setModel(self.ItemModel)
@@ -169,7 +175,7 @@ class MyWindow(QMainWindow, UI.Ui_Openkiosk, threading.Thread):
                 [self.menu_control[self.Mnum][0], self.menu_control[self.Mnum][1], self.menu_control[self.Mnum][-2]])
             self.ItemModel.appendRow(
                 QStandardItem(self.result_menu[self.listNum][1] + ' ' + str(self.result_menu[self.listNum][-1]) + '원'))
-            self.money = self.money + self.result_menu[self.listNum][-1]
+            self.money = self.money + int(self.result_menu[self.listNum][-1])
             self.listNum = self.listNum + 1
             self.ResultLabel.setText('총액 : ' + str(self.money) + ' 원')
             print(self.result_menu)
@@ -241,7 +247,7 @@ class MyWindow(QMainWindow, UI.Ui_Openkiosk, threading.Thread):
             menu_set = list(menu_dic.keys())
             for i in menu_set:
                 self.ItemModel.appendRow(
-                    QStandardItem(i + ' ' + str(menu_dic.get(i)) + '개\n' + str(menu_price.get(i) * menu_dic.get(i)) + '원')
+                    QStandardItem(i + ' ' + str(menu_dic.get(i)) + '개\n' + str(int(menu_price.get(i)) * int(menu_dic.get(i))) + '원')
                 )
             self.FinalBtn.setText("정말 다 골랐나요?")
             self.BackBtn.setText("아니요")
@@ -285,7 +291,7 @@ class MyWindow(QMainWindow, UI.Ui_Openkiosk, threading.Thread):
                 for i in tmp:
                     self.ItemModel.appendRow(
                         QStandardItem(str(i[1] + ' ' + str(i[-1]) + '원')))
-                    self.money = self.money + i[-1]
+                    self.money = self.money + int(i[-1])
                 self.ResultLabel.setText('총액 : ' + str(self.money) + '원')
                 self.result_menu.clear()
                 self.result_menu = tmp.copy()
